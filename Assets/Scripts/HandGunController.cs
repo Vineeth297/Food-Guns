@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HandGunController : MonoBehaviour
@@ -11,4 +9,6 @@ public class HandGunController : MonoBehaviour
 	{
 		myAmmo = new List<GameObject>();
 	}
+	
+	
 }

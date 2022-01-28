@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
+
 public class GameEvents : MonoBehaviour
 {
     public static GameEvents Ge;
 
-	public event Action OnCollection;
+	public Action<HandGunController, GameObject> onAmmoFound;
 	private void Awake()
 	{
-		Ge = this;
+		if(!Ge) Ge = this;
+		else Destroy(gameObject);
 	}
 
-	public void InvokeOnCollection() => OnCollection?.Invoke();
+	public void InvokeOnAmmoFound(HandGunController hand,GameObject ammo) => onAmmoFound?.Invoke(hand,ammo);
 }
