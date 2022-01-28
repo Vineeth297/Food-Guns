@@ -76,11 +76,11 @@ public class PlayerControl : MonoBehaviour
 		var collectibleComponent = collectible.GetComponent<Collectible>();
 
 		handGunController.myAmmo.Add(collectible.gameObject);
-		collectibleTransform.localScale = Vector3.one * ammoSize;
 		collectibleComponent.ammoFound = true;
 		collectibleComponent.transform.rotation = Quaternion.Euler(Vector3.zero);
 		collectibleTransform.parent = handGunController.transform;
-		
+		collectibleTransform.localScale = Vector3.one * ammoSize;
+
 		var yPos = (handGunController.myAmmo.Count - 1) * handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.y * offsetOnY ;
 		collectibleTransform.localPosition = new Vector3(0f,-yPos , extendedMagPositionOnZ) ;
 		
