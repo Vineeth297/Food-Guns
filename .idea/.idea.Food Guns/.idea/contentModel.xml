@@ -6,6 +6,19 @@
     <e p="E:\Workspace\Food Guns" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="DOTween" t="Include">
+          <e p="Modules" t="Include">
+            <e p="DOTweenModuleAudio.cs" t="Include" />
+            <e p="DOTweenModuleEPOOutline.cs" t="Include" />
+            <e p="DOTweenModulePhysics.cs" t="Include" />
+            <e p="DOTweenModulePhysics2D.cs" t="Include" />
+            <e p="DOTweenModuleSprite.cs" t="Include" />
+            <e p="DOTweenModuleUI.cs" t="Include" />
+            <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+            <e p="DOTweenModuleUtils.cs" t="Include" />
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Collectible.cs" t="Include" />
           <e p="GameEvents.cs" t="Include" />
@@ -13,6 +26,7 @@
           <e p="PlayerControl.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
         </e>
+        <e p="Trial.cs" t="Include" />
       </e>
       <e p="Food Guns.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

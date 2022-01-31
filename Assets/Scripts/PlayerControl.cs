@@ -1,4 +1,7 @@
+using System.Collections;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -11,7 +14,7 @@ public class PlayerControl : MonoBehaviour
 	[SerializeField] private GameObject rightHand;
 	[SerializeField] private GameObject leftHand;
 	[SerializeField] private GameObject shootingPosition;
-	private HandGunController _rightHandGun, _leftHandGun;
+	[HideInInspector] public HandGunController _rightHandGun, _leftHandGun;
 	
 	private Camera _camera;
 
@@ -35,15 +38,19 @@ public class PlayerControl : MonoBehaviour
 	}
 	
     void Update()
-    {
-		transform.Translate(Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed , 0f , 0f) * Time.deltaTime,Space.World);
+	{
+		if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		
+		transform.Translate(Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f) * Time.deltaTime,Space.World);
 		
 		if(transform.position.x < leftBoundary)
 			transform.position = new Vector3(leftBoundary,transform.position.y,transform.position.z);
 		if(transform.position.x > rightBoundary)
 			transform.position = new Vector3(rightBoundary,transform.position.y,transform.position.z);
 		
-		OnStartShooting(_leftHandGun);
+		//OnStartShooting(_leftHandGun);
+		if(Input.GetKeyDown(KeyCode.Space))
+			OnStartShooting(_leftHandGun);
 		
 	#if UNITY_EDITOR
 		xForce = Input.GetMouseButton(0) ? Input.GetAxis("Mouse X") * xSpeed : 0;
@@ -72,18 +79,35 @@ public class PlayerControl : MonoBehaviour
 	private void OnAmmoFound(HandGunController handGunController, GameObject collectible)
 	{
 		collectible.GetComponent<Collider>().enabled = false;
+		
 		var collectibleTransform = collectible.transform;
 		var collectibleComponent = collectible.GetComponent<Collectible>();
-
+		
+		var lastAmmoYPos = 0f;
+		if(handGunController.myAmmo.Count > 0)
+			lastAmmoYPos = handGunController.myAmmo[^1].transform.position.y;
+		
 		handGunController.myAmmo.Add(collectible.gameObject);
 		collectibleComponent.ammoFound = true;
 		collectibleComponent.transform.rotation = Quaternion.Euler(Vector3.zero);
-		collectibleTransform.parent = handGunController.transform;
-		collectibleTransform.localScale = Vector3.one * ammoSize;
-
-		var yPos = (handGunController.myAmmo.Count - 1) * handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.y * offsetOnY ;
-		collectibleTransform.localPosition = new Vector3(0f,-yPos , extendedMagPositionOnZ) ;
 		
+		if(handGunController.myAmmo.Count == 1)
+			collectibleTransform.parent = handGunController.transform;
+		
+		collectibleTransform.localScale = Vector3.one * ammoSize;
+		
+		if (handGunController.myAmmo.Count == 1)
+			// collectibleTransform.localPosition = new Vector3(0f, 0f, extendedMagPositionOnZ);								// static positioning
+			collectibleTransform.DOLocalMove(new Vector3(0f, 0f, extendedMagPositionOnZ),0.15f);
+		else
+		{
+			var yPos = lastAmmoYPos - handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.y + offsetOnY ;
+			// collectibleTransform.localPosition = new Vector3(0f,yPos , extendedMagPositionOnZ);								// static positioning
+			collectibleTransform.DOLocalMove(new Vector3(0f, yPos, extendedMagPositionOnZ),0.15f);
+		}
+		
+		collectibleComponent.SwingMag();
+
 	}
 
 	private void OnStartShooting(HandGunController handGunController)
@@ -91,20 +115,28 @@ public class PlayerControl : MonoBehaviour
 		//remove first ammo item from myammo list and move the bullets up
 		//unparent the first ammo from player
 		if (handGunController.myAmmo.Count == 0) return;
+		StartCoroutine(Shoot(handGunController));
 		
-		if(Input.GetKeyDown(KeyCode.Space))
+	}
+
+	IEnumerator Shoot(HandGunController handGunController)
+	{
+		while (handGunController.myAmmo.Count != 0)
 		{
 			GameObject bullet = handGunController.myAmmo[0];
 			handGunController.myAmmo.RemoveAt(0);
-			bullet.transform.localPosition = shootingPosition.transform.localPosition;
+			
 			bullet.transform.parent = null;
-			bullet.GetComponent<Collectible>().startShooting = true;
+			//yield return null;
+			bullet.GetComponent<Collectible>().StartMoving(shootingPosition.transform.position);
 
 			for (int i = 0; i < handGunController.myAmmo.Count; i++)
 			{
-				var yPos = i * handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.y * offsetOnY ;
-				handGunController.myAmmo[i].transform.localPosition = new Vector3(0f,-yPos , extendedMagPositionOnZ) ;	
+				var yPos = i * handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.y + offsetOnY ; 
+				//handGunController.myAmmo[i].transform.localPosition = new Vector3(0f,-yPos , extendedMagPositionOnZ);								// static positioning
+				handGunController.myAmmo[i].transform.DOLocalMove(new Vector3(0f, -yPos, extendedMagPositionOnZ), 0.15f);
 			}
+			yield return new WaitForSeconds(0.15f);
 		}
 	}
 }
