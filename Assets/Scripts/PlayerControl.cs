@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
@@ -14,13 +15,18 @@ public class PlayerControl : MonoBehaviour
 	[SerializeField] private GameObject rightHand;
 	[SerializeField] private GameObject leftHand;
 	[SerializeField] private GameObject shootingPosition;
-	[HideInInspector] public HandGunController _rightHandGun, _leftHandGun;
-	
+	[SerializeField] private Transform offsat;
+	public HandGunController rightHandGun, leftHandGun;
+
 	private Camera _camera;
 
 	[SerializeField] private float offsetOnY;
 	[SerializeField] private float extendedMagPositionOnZ;
+	public GameObject leftMagPos, rightMagPos;
 
+	public List<Vector3> Positions;
+	public int IntervalPos = 10;
+	
 	private void OnEnable()
 	{
 		GameEvents.Ge.onAmmoFound += OnAmmoFound;
@@ -33,24 +39,15 @@ public class PlayerControl : MonoBehaviour
 
 	private void Start()
 	{
-		_rightHandGun = rightHand.GetComponent<HandGunController>();
-		_leftHandGun = leftHand.GetComponent<HandGunController>();
+		rightHandGun = rightHand.GetComponent<HandGunController>();
+		leftHandGun = leftHand.GetComponent<HandGunController>();
 	}
+
+	public Vector3 oldPos;
 	
     void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		
-		transform.Translate(Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f) * Time.deltaTime,Space.World);
-		
-		if(transform.position.x < leftBoundary)
-			transform.position = new Vector3(leftBoundary,transform.position.y,transform.position.z);
-		if(transform.position.x > rightBoundary)
-			transform.position = new Vector3(rightBoundary,transform.position.y,transform.position.z);
-		
-		//OnStartShooting(_leftHandGun);
-		if(Input.GetKeyDown(KeyCode.Space))
-			OnStartShooting(_leftHandGun);
 		
 	#if UNITY_EDITOR
 		xForce = Input.GetMouseButton(0) ? Input.GetAxis("Mouse X") * xSpeed : 0;
@@ -61,18 +58,32 @@ public class PlayerControl : MonoBehaviour
 			xForce = touchDeltaPosition.x*swipeSpeed*Mathf.Deg2Rad;
           }
 	#endif
+		
+		transform.Translate((Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f)) * Time.deltaTime,Space.World);
+
+		if(transform.position.x < leftBoundary)
+			transform.position = new Vector3(leftBoundary,transform.position.y,transform.position.z);
+		else if(transform.position.x > rightBoundary)
+			transform.position = new Vector3(rightBoundary,transform.position.y,transform.position.z);
+		
+		//OnStartShooting(_leftHandGun);
+		//if(Input.GetKeyDown(KeyCode.Space))
+			//OnStartShooting(_leftHandGun);
+			
+		Positions.Insert(0, offsat.position);
+			
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Solids"))
 		{
-			GameEvents.Ge.onAmmoFound(_leftHandGun,other.gameObject);
+			GameEvents.Ge.onAmmoFound(leftHandGun,other.gameObject);
 		}
-
+	
 		if (other.CompareTag("Liquids"))
 		{
-			GameEvents.Ge.onAmmoFound(_rightHandGun, other.gameObject);
+			GameEvents.Ge.onAmmoFound(rightHandGun, other.gameObject);
 		}
 	}
 
@@ -85,27 +96,32 @@ public class PlayerControl : MonoBehaviour
 		
 		var lastAmmoYPos = 0f;
 		if(handGunController.myAmmo.Count > 0)
-			lastAmmoYPos = handGunController.myAmmo[^1].transform.position.y;
+			lastAmmoYPos = handGunController.myAmmo[^1].transform.localPosition.z;
+		// lastAmmoYPos = handGunController.myAmmo[^1].transform.position.y;
 		
 		handGunController.myAmmo.Add(collectible.gameObject);
 		collectibleComponent.ammoFound = true;
 		collectibleComponent.transform.rotation = Quaternion.Euler(Vector3.zero);
+
+		collectibleTransform.position = leftMagPos.transform.position - new Vector3(0f,0f,collectibleComponent.ammoIndex * offsetOnY);
 		
-		if(handGunController.myAmmo.Count == 1)
-			collectibleTransform.parent = handGunController.transform;
+		//if(handGunController.myAmmo.Count == 1)
+		//collectibleTransform.parent = leftMagPos.transform;
 		
 		collectibleTransform.localScale = Vector3.one * ammoSize;
-		
+		/*
 		if (handGunController.myAmmo.Count == 1)
 			// collectibleTransform.localPosition = new Vector3(0f, 0f, extendedMagPositionOnZ);								// static positioning
 			collectibleTransform.DOLocalMove(new Vector3(0f, 0f, extendedMagPositionOnZ),0.15f);
 		else
 		{
-			var yPos = lastAmmoYPos - handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.y + offsetOnY ;
+			// var yPos = lastAmmoYPos - handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.y + offsetOnY ;
+			var zPos = lastAmmoYPos - handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.z + offsetOnY ;
 			// collectibleTransform.localPosition = new Vector3(0f,yPos , extendedMagPositionOnZ);								// static positioning
-			collectibleTransform.DOLocalMove(new Vector3(0f, yPos, extendedMagPositionOnZ),0.15f);
-		}
-		
+			// collectibleTransform.DOLocalMove(new Vector3(0f, yPos, extendedMagPositionOnZ),0.15f);
+			collectibleTransform.DOLocalMove(new Vector3(0f, 0f, zPos),0.15f);
+			print(zPos);
+		}*/
 		collectibleComponent.SwingMag();
 
 	}

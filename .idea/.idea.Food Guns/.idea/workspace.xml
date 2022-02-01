@@ -19,14 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6f0fd4-cfb6-45a5-ab60-8f1383d7755d" name="Default Changelist" comment="Added hands and gun models for prototype">
+    <list default="true" id="bb6f0fd4-cfb6-45a5-ab60-8f1383d7755d" name="Default Changelist" comment="Change of plans&#10;Switching to horizontal mag&#10;sigh..">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Ground.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +36,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DOTween/Modules/DOTweenModulePhysics2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Trial.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DOTween/Modules/DOTweenModuleUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Collectible.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -51,8 +52,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" />
         <option value="$PROJECT_DIR$/Assets/Trial.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameraFollow.cs" />
       </list>
     </option>
   </component>
@@ -100,21 +102,26 @@
     <MESSAGE value="DOne with character movement&#10;working on stacking collectibles one below the other like a bullet mag&#10;cant stack them properly YET, need to work on stacking logic....&#10;adios!" />
     <MESSAGE value="CHaracter Movement&#10;Gun Loading and unloading Ammo &#10; - Stacking Ammo&#10; - Moving the ammo up in the mag after a bullet fired&#10; DONE.....!" />
     <MESSAGE value="Added hands and gun models for prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added hands and gun models for prototype" />
+    <MESSAGE value="Change of plans&#10;Switching to horizontal mag&#10;sigh.." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change of plans&#10;Switching to horizontal mag&#10;sigh.." />
   </component>
   <component name="WindowStateProjectService">
     <state x="729" y="243" key="RiderGenerateDialog" timestamp="1643344593078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="729" y="243" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1643344593078" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1643628689923">
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1643711609033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1643628689923" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1643375842732">
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1643711609033" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1643637768022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1643375842732" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1643637768022" />
+    <state x="638" y="17" width="1010" height="1004" key="find.popup" timestamp="1643696499656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="638" y="17" width="1010" height="1004" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1643696499656" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1643281903851">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

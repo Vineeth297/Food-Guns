@@ -1,3 +1,4 @@
+using TreeEditor;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
@@ -13,6 +14,12 @@ public class Collectible : MonoBehaviour
 	HandGunController _handGunController;
 	private PlayerControl _playerControl;
 
+	private Rigidbody _rb;
+	private Vector3 _lastPosition;
+	[SerializeField] private float forwardOffset;
+
+	public bool canFilterTheList;
+	
 	void Start()
 	{
 		_handGunController = FindObjectOfType<HandGunController>();
@@ -23,19 +30,17 @@ public class Collectible : MonoBehaviour
 	{
 		if(!ammoFound)
 			transform.Rotate(45f * Time.deltaTime, 45f * Time.deltaTime, 45f * Time.deltaTime);
-
+		
+		if(ammoFound)
+			SnakeMovement();
+		
 		if(startMoving)
 			Shoot();
 	}
 
-	private void LateUpdate()
-	{	
-		if (ammoFound)
-		{
-			Vector3 smoothPos = Vector3.Lerp(transform.position, new Vector3(ammoToFollow.position.x,transform.position.y,ammoToFollow.position.z) ,Time.deltaTime * damping);//b: new Vector3(ammoToFollow.position.x,transform.position.y,ammoToFollow.position.z), 
-			transform.position = smoothPos;
-			transform.eulerAngles = ammoToFollow.eulerAngles;
-		}
+	private void FixedUpdate()
+	{
+		//_rb.MovePosition(Vector3.Lerp(transform.position, ammoToFollow.position, Time.fixedDeltaTime * damping));
 	}
 
 	private void Shoot()
@@ -49,25 +54,33 @@ public class Collectible : MonoBehaviour
 		transform.position = transformPosition;
 	}
 
-	public void SwingMag()
-	{
-		if (_handGunController.myAmmo.Count == 0) return;
+	 public void SwingMag()
+	 {
+	 	if (_handGunController.myAmmo.Count == 0) return;
 		
+		ammoIndex = _handGunController.myAmmo.Count;
+
+		if (ammoIndex == 1)
+			ammoToFollow = _playerControl.leftMagPos.transform;
+		else
+			ammoToFollow = _handGunController.myAmmo[ammoIndex - 2].transform;
+
 		
-		if (_handGunController.myAmmo.Count == 1)
-		{
-			ammoIndex = 1;
-			ammoToFollow = _playerControl._leftHandGun.myAmmo[^1].transform;
-		}
-		else if (_handGunController.myAmmo.Count == 2)
-		{
-			ammoIndex = 2;
-			ammoToFollow = _playerControl._leftHandGun.myAmmo[0].transform;
-		}
-		else 
-		{
-			ammoIndex = _handGunController.myAmmo.Count;
-			ammoToFollow = _playerControl._leftHandGun.myAmmo[ammoIndex - 2].transform;
-		}
-	}
+		canFilterTheList = true;
+	 }
+
+	 private void SnakeMovement()
+	 {
+		 transform.position = Vector3.Lerp(transform.position, _playerControl.Positions[(_playerControl.IntervalPos * ammoIndex)], Time.deltaTime * damping);
+
+		 if (canFilterTheList)
+		 {
+			 _playerControl.Positions.RemoveRange((_playerControl.IntervalPos * ammoIndex ),_playerControl.Positions.Count - (_playerControl.IntervalPos * ammoIndex ) );
+
+		 }
+		 canFilterTheList = false;
+
+		 // _playerControl.Positions.RemoveRange((_playerControl.IntervalPos * ammoIndex ),_playerControl.Positions.Count - (_playerControl.IntervalPos * ammoIndex ) );
+	 }
+
 }
