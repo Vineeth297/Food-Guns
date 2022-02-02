@@ -38,11 +38,6 @@ public class Collectible : MonoBehaviour
 			Shoot();
 	}
 
-	private void FixedUpdate()
-	{
-		//_rb.MovePosition(Vector3.Lerp(transform.position, ammoToFollow.position, Time.fixedDeltaTime * damping));
-	}
-
 	private void Shoot()
 	{
 		transform.Translate(transform.forward,Space.Self);
@@ -50,8 +45,8 @@ public class Collectible : MonoBehaviour
 
 	public void StartMoving(Vector3 transformPosition)
 	{
-		startMoving = true;
 		transform.position = transformPosition;
+		startMoving = true;
 	}
 
 	 public void SwingMag()
@@ -71,16 +66,18 @@ public class Collectible : MonoBehaviour
 
 	 private void SnakeMovement()
 	 {
-		 transform.position = Vector3.Lerp(transform.position, _playerControl.Positions[(_playerControl.IntervalPos * ammoIndex)], Time.deltaTime * damping);
-
+		 if(!startMoving)
+			transform.position = Vector3.Lerp(transform.position, _playerControl.positions[(_playerControl.intervalPos * ammoIndex)], Time.deltaTime * damping);
+		 // transform.position = Vector3.Lerp(transform.position,
+			//  _playerControl.Positions[(_playerControl.IntervalPos * ammoIndex) * (int)_playerControl.PositionValiation(_playerControl.IntervalPos)],
+			//  Time.deltaTime * damping);
+		
+	//	 print($"vlaidated fkiat {_playerControl.PositionValiation(_playerControl.IntervalPos)} for {ammoIndex}");
+		 
 		 if (canFilterTheList)
-		 {
-			 _playerControl.Positions.RemoveRange((_playerControl.IntervalPos * ammoIndex ),_playerControl.Positions.Count - (_playerControl.IntervalPos * ammoIndex ) );
-
-		 }
+			 _playerControl.positions.RemoveRange((_playerControl.intervalPos * ammoIndex), _playerControl.positions.Count - (_playerControl.intervalPos * ammoIndex));
+		 
 		 canFilterTheList = false;
-
-		 // _playerControl.Positions.RemoveRange((_playerControl.IntervalPos * ammoIndex ),_playerControl.Positions.Count - (_playerControl.IntervalPos * ammoIndex ) );
 	 }
 
 }

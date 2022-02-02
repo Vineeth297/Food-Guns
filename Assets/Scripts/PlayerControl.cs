@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -11,22 +12,19 @@ public class PlayerControl : MonoBehaviour
 	[SerializeField] private float xSpeed;
 	[SerializeField] private float leftBoundary, rightBoundary;
 
+	public HandGunController rightHandGun, leftHandGun;
 	[SerializeField] private float ammoSize;
 	[SerializeField] private GameObject rightHand;
 	[SerializeField] private GameObject leftHand;
 	[SerializeField] private GameObject shootingPosition;
-	[SerializeField] private Transform offsat;
-	public HandGunController rightHandGun, leftHandGun;
-
-	private Camera _camera;
+	[SerializeField] private Transform offset;
 
 	[SerializeField] private float offsetOnY;
-	[SerializeField] private float extendedMagPositionOnZ;
 	public GameObject leftMagPos, rightMagPos;
 
-	public List<Vector3> Positions;
-	public int IntervalPos = 10;
-	
+	public List<Vector3> positions;
+	public int intervalPos = 10;
+
 	private void OnEnable()
 	{
 		GameEvents.Ge.onAmmoFound += OnAmmoFound;
@@ -44,8 +42,9 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	public Vector3 oldPos;
-	
-    void Update()
+	[SerializeField] private AnimationCurve animCurve;
+
+	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		
@@ -66,12 +65,13 @@ public class PlayerControl : MonoBehaviour
 		else if(transform.position.x > rightBoundary)
 			transform.position = new Vector3(rightBoundary,transform.position.y,transform.position.z);
 		
-		//OnStartShooting(_leftHandGun);
-		//if(Input.GetKeyDown(KeyCode.Space))
-			//OnStartShooting(_leftHandGun);
+		
+		positions.Insert(0, offset.position);
 			
-		Positions.Insert(0, offsat.position);
-			
+		//OnStartShooting(leftHandGun);
+		if(Input.GetKeyDown(KeyCode.Space))
+			OnStartShooting(leftHandGun);
+
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -131,6 +131,7 @@ public class PlayerControl : MonoBehaviour
 		//remove first ammo item from myammo list and move the bullets up
 		//unparent the first ammo from player
 		if (handGunController.myAmmo.Count == 0) return;
+		
 		StartCoroutine(Shoot(handGunController));
 		
 	}
@@ -142,15 +143,11 @@ public class PlayerControl : MonoBehaviour
 			GameObject bullet = handGunController.myAmmo[0];
 			handGunController.myAmmo.RemoveAt(0);
 			
-			bullet.transform.parent = null;
-			//yield return null;
 			bullet.GetComponent<Collectible>().StartMoving(shootingPosition.transform.position);
 
-			for (int i = 0; i < handGunController.myAmmo.Count; i++)
+			for (int i = 1; i < handGunController.myAmmo.Count; i++)
 			{
-				var yPos = i * handGunController.myAmmo[^1].GetComponent<Renderer>().bounds.size.y + offsetOnY ; 
-				//handGunController.myAmmo[i].transform.localPosition = new Vector3(0f,-yPos , extendedMagPositionOnZ);								// static positioning
-				handGunController.myAmmo[i].transform.DOLocalMove(new Vector3(0f, -yPos, extendedMagPositionOnZ), 0.15f);
+				handGunController.myAmmo[i].GetComponent<Collectible>().ammoIndex -= 1;
 			}
 			yield return new WaitForSeconds(0.15f);
 		}
