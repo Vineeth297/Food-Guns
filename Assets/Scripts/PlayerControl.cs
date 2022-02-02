@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -11,38 +8,12 @@ public class PlayerControl : MonoBehaviour
 	[SerializeField] private float xForce;
 	[SerializeField] private float xSpeed;
 	[SerializeField] private float leftBoundary, rightBoundary;
+	
+	[SerializeField] private Transform offsetOnRight, offsetOnLeft;
 
-	public HandGunController rightHandGun, leftHandGun;
-	[SerializeField] private float ammoSize;
-	[SerializeField] private GameObject rightHand;
-	[SerializeField] private GameObject leftHand;
-	[SerializeField] private GameObject shootingPosition;
-	[SerializeField] private Transform offset;
-
-	[SerializeField] private float offsetOnY;
-	public GameObject leftMagPos, rightMagPos;
-
-	public List<Vector3> positions;
+	public List<Vector3> leftPositions;
+	public List<Vector3> rightPositions;
 	public int intervalPos = 10;
-
-	private void OnEnable()
-	{
-		GameEvents.Ge.onAmmoFound += OnAmmoFound;
-	}
-
-	private void OnDisable()
-	{
-		GameEvents.Ge.onAmmoFound -= OnAmmoFound;
-	}
-
-	private void Start()
-	{
-		rightHandGun = rightHand.GetComponent<HandGunController>();
-		leftHandGun = leftHand.GetComponent<HandGunController>();
-	}
-
-	public Vector3 oldPos;
-	[SerializeField] private AnimationCurve animCurve;
 
 	void Update()
 	{
@@ -66,28 +37,50 @@ public class PlayerControl : MonoBehaviour
 			transform.position = new Vector3(rightBoundary,transform.position.y,transform.position.z);
 		
 		
-		positions.Insert(0, offset.position);
-			
-		//OnStartShooting(leftHandGun);
-		if(Input.GetKeyDown(KeyCode.Space))
-			OnStartShooting(leftHandGun);
-
+		leftPositions.Insert(0, offsetOnLeft.position);
+		rightPositions.Insert(0, offsetOnRight.position);
+		
+		/*if (Input.GetKeyDown(KeyCode.Space))
+		{
+			OnStartShooting(leftHandGun,leftMuzzle);
+			OnStartShooting(rightHandGun,rightMuzzle);
+		}*/
 	}
+	/*
+	[SerializeField] private float movementSpeed = 5f;
+	[SerializeField] private float xForce;
+	[SerializeField] private float xSpeed;
+	[SerializeField] private float leftBoundary, rightBoundary;
 
-	private void OnTriggerEnter(Collider other)
+	public HandGunController rightHandGun, leftHandGun;
+	[SerializeField] private float ammoSize;
+	[SerializeField] private GameObject rightHand;
+	[SerializeField] private GameObject leftHand;
+	[SerializeField] private GameObject leftMuzzle, rightMuzzle;
+	[SerializeField] private Transform offsetOnRight, offsetOnLeft;
+
+	[SerializeField] private float offsetOnY;
+	public GameObject leftMagPos, rightMagPos;
+
+	[HideInInspector] public List<Vector3> leftPositions;
+	[HideInInspector] public List<Vector3> rightPositions;
+	public int intervalPos = 10;
+	
+	
+	 private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Solids"))
 		{
-			GameEvents.Ge.onAmmoFound(leftHandGun,other.gameObject);
+			GameEvents.Ge.InvokeOnAmmoFound(leftHandGun, other.gameObject, leftMagPos);
 		}
 	
 		if (other.CompareTag("Liquids"))
 		{
-			GameEvents.Ge.onAmmoFound(rightHandGun, other.gameObject);
+			GameEvents.Ge.InvokeOnAmmoFound(rightHandGun, other.gameObject, rightMagPos);
 		}
 	}
 
-	private void OnAmmoFound(HandGunController handGunController, GameObject collectible)
+	private void OnAmmoFound(HandGunController handGunController, GameObject collectible, GameObject mag)
 	{
 		collectible.GetComponent<Collider>().enabled = false;
 		
@@ -99,16 +92,21 @@ public class PlayerControl : MonoBehaviour
 			lastAmmoYPos = handGunController.myAmmo[^1].transform.localPosition.z;
 		// lastAmmoYPos = handGunController.myAmmo[^1].transform.position.y;
 		
-		handGunController.myAmmo.Add(collectible.gameObject);
+		handGunController.myAmmo.Add(collectible);
 		collectibleComponent.ammoFound = true;
 		collectibleComponent.transform.rotation = Quaternion.Euler(Vector3.zero);
 
-		collectibleTransform.position = leftMagPos.transform.position - new Vector3(0f,0f,collectibleComponent.ammoIndex * offsetOnY);
+		collectibleTransform.position = mag.transform.position - new Vector3(0f,0f,collectibleComponent.ammoIndex * offsetOnY);
 		
 		//if(handGunController.myAmmo.Count == 1)
 		//collectibleTransform.parent = leftMagPos.transform;
-		
-		collectibleTransform.localScale = Vector3.one * ammoSize;
+		if(collectible.CompareTag("Solids"))
+			collectibleTransform.localScale = Vector3.one * ammoSize;
+
+		if (collectible.CompareTag("Liquids"))
+		{
+			collectible.transform.rotation = Quaternion.Euler(-90f,0f,0f);
+		}
 		/*
 		if (handGunController.myAmmo.Count == 1)
 			// collectibleTransform.localPosition = new Vector3(0f, 0f, extendedMagPositionOnZ);								// static positioning
@@ -121,29 +119,29 @@ public class PlayerControl : MonoBehaviour
 			// collectibleTransform.DOLocalMove(new Vector3(0f, yPos, extendedMagPositionOnZ),0.15f);
 			collectibleTransform.DOLocalMove(new Vector3(0f, 0f, zPos),0.15f);
 			print(zPos);
-		}*/
-		collectibleComponent.SwingMag();
+		}#1#
+		collectibleComponent.SwingMag(mag);
 
 	}
 
-	private void OnStartShooting(HandGunController handGunController)
+	private void OnStartShooting(HandGunController handGunController,GameObject muzzle)
 	{
 		//remove first ammo item from myammo list and move the bullets up
 		//unparent the first ammo from player
 		if (handGunController.myAmmo.Count == 0) return;
 		
-		StartCoroutine(Shoot(handGunController));
+		StartCoroutine(Shoot(handGunController,muzzle));
 		
 	}
 
-	IEnumerator Shoot(HandGunController handGunController)
+	IEnumerator Shoot(HandGunController handGunController, GameObject muzzle)
 	{
 		while (handGunController.myAmmo.Count != 0)
 		{
 			GameObject bullet = handGunController.myAmmo[0];
 			handGunController.myAmmo.RemoveAt(0);
 			
-			bullet.GetComponent<Collectible>().StartMoving(shootingPosition.transform.position);
+			bullet.GetComponent<Collectible>().StartMoving(muzzle.transform.position);
 
 			for (int i = 1; i < handGunController.myAmmo.Count; i++)
 			{
@@ -151,6 +149,6 @@ public class PlayerControl : MonoBehaviour
 			}
 			yield return new WaitForSeconds(0.15f);
 		}
-	}
+	}*/
 }
 

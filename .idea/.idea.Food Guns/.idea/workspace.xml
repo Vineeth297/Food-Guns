@@ -19,16 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6f0fd4-cfb6-45a5-ab60-8f1383d7755d" name="Default Changelist" comment="Still working on smoothing this follow movement">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/indexLayout.xml" afterDir="false" />
+    <list default="true" id="bb6f0fd4-cfb6-45a5-ab60-8f1383d7755d" name="Default Changelist" comment="Done with basic level travesal mechanim of the Player&#10;- Added smooth camera follow&#10;- Worked on ammo loading and unloading function.But not for both hand guns&#10;- need to work on adding the firing function for both the hands&#10;- also need to work on ammmo clamping with movement">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +51,13 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Solids.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HandGunFunction.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" />
         <option value="$PROJECT_DIR$/Assets/Trial.cs" />
         <option value="$PROJECT_DIR$/Assets/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" />
       </list>
     </option>
   </component>
@@ -110,7 +107,8 @@
     <MESSAGE value="Added hands and gun models for prototype" />
     <MESSAGE value="Change of plans&#10;Switching to horizontal mag&#10;sigh.." />
     <MESSAGE value="Still working on smoothing this follow movement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still working on smoothing this follow movement" />
+    <MESSAGE value="Done with basic level travesal mechanim of the Player&#10;- Added smooth camera follow&#10;- Worked on ammo loading and unloading function.But not for both hand guns&#10;- need to work on adding the firing function for both the hands&#10;- also need to work on ammmo clamping with movement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done with basic level travesal mechanim of the Player&#10;- Added smooth camera follow&#10;- Worked on ammo loading and unloading function.But not for both hand guns&#10;- need to work on adding the firing function for both the hands&#10;- also need to work on ammmo clamping with movement" />
   </component>
   <component name="WindowStateProjectService">
     <state x="729" y="243" key="RiderGenerateDialog" timestamp="1643344593078">
@@ -121,10 +119,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1643711609033" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1643722619192">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1643795973193">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1643722619192" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1643795973193" />
     <state x="638" y="17" width="1010" height="1004" key="find.popup" timestamp="1643696499656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
