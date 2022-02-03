@@ -20,15 +20,10 @@ public class HandGunController : MonoBehaviour
 	
 	[HideInInspector] public List<Vector3> rightPositions;
 
-	/*private void OnEnable()
-	{
-		GameEvents.Ge.onAmmoFound += OnAmmoFound;
-	}
+	[SerializeField] private int totalLeftCollectibles;
+	[SerializeField] private int totalRightCollectibles;
 
-	private void OnDisable()
-	{
-		GameEvents.Ge.onAmmoFound -= OnAmmoFound;
-	}*/
+	[SerializeField] private int totalAmmo;
 	
 	private void Start()
 	{
@@ -51,13 +46,19 @@ public class HandGunController : MonoBehaviour
 		if (other.CompareTag("Solids"))
 		{
 			//GameEvents.Ge.InvokeOnAmmoFound(leftHandGun, other.gameObject, leftMagPos);
+			//GameEvents.Ge.InvokeOnLeftAmmoFound(leftHandGun, other.gameObject, leftMagPos);
 			OnAmmoFound(leftHandGun, other.gameObject, leftMagPos);
+			totalLeftCollectibles++;
+			totalAmmo++;
 		}
 	
 		if (other.CompareTag("Liquids"))
 		{
 			//GameEvents.Ge.InvokeOnAmmoFound(rightHandGun, other.gameObject, rightMagPos);
+			//GameEvents.Ge.InvokeOnRightAmmoFound(leftHandGun, other.gameObject, leftMagPos);
 			OnAmmoFound(rightHandGun, other.gameObject, rightMagPos);
+			totalRightCollectibles++;
+			totalAmmo++;
 		}
 	}
 
@@ -134,9 +135,16 @@ public class HandGunController : MonoBehaviour
 				else
 					ammoComponent.rightAmmoIndex -= 1;
 			}
+
+
+			totalAmmo--;
+			/*if(bullet.CompareTag("Solids"))
+				totalLeftCollectibles--;
+			else
+				totalRightCollectibles--;*/
 			
+			print("here");
 			yield return new WaitForSeconds(0.15f);
 		}
 	}
-	
 }

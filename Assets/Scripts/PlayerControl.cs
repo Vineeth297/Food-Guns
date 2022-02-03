@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,30 @@ public class PlayerControl : MonoBehaviour
 	public List<Vector3> rightPositions;
 	public int intervalPos = 10;
 
+	public bool walkState;
+	[SerializeField] private float lerpTime;
+
+	[SerializeField] private float offsetOnZ = 0.1f;
+
+	[SerializeField] private GameObject cameraFinalPosition;
+
+	private Camera _camera;
+	private void OnEnable()
+	{
+		GameEvents.Ge.aimModeSwitch += OnAimModeSwitch;
+	}
+
+	private void OnDisable()
+	{
+		GameEvents.Ge.aimModeSwitch -= OnAimModeSwitch;
+	}
+
+	private void Start()
+	{
+		walkState = true;
+		_camera = Camera.main;
+	}
+	
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -28,17 +53,29 @@ public class PlayerControl : MonoBehaviour
 			xForce = touchDeltaPosition.x*swipeSpeed*Mathf.Deg2Rad;
           }
 	#endif
-		
-		transform.Translate((Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f)) * Time.deltaTime,Space.World);
 
+		if (walkState)
+		{
+			transform.Translate(
+				(Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f)) * Time.deltaTime, Space.World);
+			leftPositions.Insert(0, offsetOnLeft.position);
+			rightPositions.Insert(0, offsetOnRight.position);
+		}
+		else
+		{
+			if(Input.GetMouseButton(0))
+			{
+				//transform.Translate(new Vector3(xForce * xSpeed, 0f, 0f) * Time.deltaTime);
+				if(xForce * xSpeed > 0)
+					transform.Rotate(Vector3.up,1f);
+				if(xForce * xSpeed < 0)
+					transform.Rotate(Vector3.up,-1f);
+			}
+		} 
 		if(transform.position.x < leftBoundary)
 			transform.position = new Vector3(leftBoundary,transform.position.y,transform.position.z);
 		else if(transform.position.x > rightBoundary)
 			transform.position = new Vector3(rightBoundary,transform.position.y,transform.position.z);
-		
-		
-		leftPositions.Insert(0, offsetOnLeft.position);
-		rightPositions.Insert(0, offsetOnRight.position);
 		
 		/*if (Input.GetKeyDown(KeyCode.Space))
 		{
@@ -150,5 +187,16 @@ public class PlayerControl : MonoBehaviour
 			yield return new WaitForSeconds(0.15f);
 		}
 	}*/
+	
+	private void OnAimModeSwitch()
+	{
+		walkState = false;
+		//Camera.main.GetComponent<CameraFollow>().enabled = false;
+		var cameraTransform = _camera.transform;
+		//_camera.transform.rotation = Quaternion.Euler(Vector3.zero);
+		cameraTransform.DORotate(Vector3.zero, 1f, RotateMode.Fast);
+		cameraTransform.DOMove(cameraFinalPosition.transform.position, 1f);
+		cameraTransform.parent = transform;
+	}
 }
 

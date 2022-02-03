@@ -19,6 +19,16 @@ public class Collectible : MonoBehaviour
 
 	public bool canFilterTheList;
 
+	public Camera camera;
+	// private void OnEnable()
+	// {
+	// 	GameEvents.Ge.aimModeSwitch += OnAimModeSwitch;
+	// }
+	//
+	// private void OnDisable()
+	// {
+	// 	GameEvents.Ge.aimModeSwitch -= OnAimModeSwitch;
+	// }
 	void Start()
 	{
 		_playerControl = FindObjectOfType<PlayerControl>();
@@ -28,7 +38,7 @@ public class Collectible : MonoBehaviour
 			_handGunController = _handGunController.leftHandGun;
 		else
 			_handGunController = _handGunController.rightHandGun;
-		
+
 		/*_playerControl = FindObjectOfType<PlayerControl>();
 		if (CompareTag("Solids"))
 			_handGunController = _playerControl.leftHandGun;
@@ -48,9 +58,27 @@ public class Collectible : MonoBehaviour
 			Shoot();
 	}
 
+	
+	public Vector3 followOffset;
+
+	private void LateUpdate()
+	{
+		OnAimModeSwitch();
+	}
+
+	private void OnAimModeSwitch()
+	{
+		if (_playerControl.walkState) return;
+		if (startMoving) return;
+		Vector3 smoothPos = Vector3.Lerp(transform.position, ammoToFollow.position + followOffset , Time.deltaTime * damping);
+		transform.position = smoothPos;
+		transform.eulerAngles = ammoToFollow.eulerAngles;
+		//print(transform.position);
+	}
 	private void Shoot()
 	{
-		transform.Translate(Vector3.forward,Space.World);
+		// transform.Translate(Vector3.forward,Space.World);
+		transform.Translate(camera.transform.forward,Space.World);
 	}
 
 	public void StartMoving(Vector3 transformPosition)
@@ -67,7 +95,7 @@ public class Collectible : MonoBehaviour
 		{
 			leftAmmoIndex = handGunController.myAmmo.Count;
 		
-			print("left " + leftAmmoIndex);	
+			//print("left " + leftAmmoIndex);	
 
 			if (leftAmmoIndex == 1)
 				ammoToFollow = mag.transform;
@@ -78,7 +106,7 @@ public class Collectible : MonoBehaviour
 		{
 			rightAmmoIndex = handGunController.myAmmo.Count;
 		
-			print("Right"+ rightAmmoIndex);	
+			//print("Right"+ rightAmmoIndex);	
 
 			if (rightAmmoIndex == 1)
 				ammoToFollow = mag.transform;
@@ -94,30 +122,28 @@ public class Collectible : MonoBehaviour
 		 if (!startMoving)
 		 {
 			 
-				 if (CompareTag("Solids"))
-					 try
-					 {
+			 if (CompareTag("Solids"))
+				 try
+				 {
+					transform.position = Vector3.Lerp(transform.position,
+					 _playerControl.leftPositions[(_playerControl.intervalPos * leftAmmoIndex)],
+					 Time.deltaTime * damping);
+				 }
+				 catch (Exception e)
+				 {
+					// print($"ammoIndex = {ammoIndex}, result = {_playerControl.intervalPos * ammoIndex}, leftPositions.count = {_playerControl.leftPositions.Count}");
+				 }
+			 else
+				 try
+				 {
 					 transform.position = Vector3.Lerp(transform.position,
-						 _playerControl.leftPositions[(_playerControl.intervalPos * leftAmmoIndex)],
+						 _playerControl.rightPositions[(_playerControl.intervalPos * rightAmmoIndex)],
 						 Time.deltaTime * damping);
-					 }
-					 catch (Exception e)
-					 {
-						// print($"ammoIndex = {ammoIndex}, result = {_playerControl.intervalPos * ammoIndex}, leftPositions.count = {_playerControl.leftPositions.Count}");
-					 }
-				 else
-					 try
-					 {
-						 transform.position = Vector3.Lerp(transform.position,
-							 _playerControl.rightPositions[(_playerControl.intervalPos * rightAmmoIndex)],
-							 Time.deltaTime * damping);
-					 }
-					 catch (Exception e)
-					 {
-						// print($"ammoIndex = {ammoIndex}, result = {_playerControl.intervalPos * ammoIndex}, rightPositions.count = {_playerControl.rightPositions.Count}");
-					 }
-					 
-			 
+				 }
+				 catch (Exception e)
+				 {
+					// print($"ammoIndex = {ammoIndex}, result = {_playerControl.intervalPos * ammoIndex}, rightPositions.count = {_playerControl.rightPositions.Count}");
+				 }
 		 }
 		 // transform.position = Vector3.Lerp(transform.position,
 			//  _playerControl.Positions[(_playerControl.IntervalPos * ammoIndex) * (int)_playerControl.PositionValiation(_playerControl.IntervalPos)],
