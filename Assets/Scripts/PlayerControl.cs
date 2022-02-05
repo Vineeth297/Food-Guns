@@ -14,15 +14,12 @@ public class PlayerControl : MonoBehaviour
 
 	public List<Vector3> leftPositions;
 	public List<Vector3> rightPositions;
-	public int intervalPos = 10;
+	public int leftIntervalPos = 10;
+	public int rightIntervalPos = 10;
 
 	public bool walkState;
-	[SerializeField] private float lerpTime;
-
-	[SerializeField] private float offsetOnZ = 0.1f;
 
 	[SerializeField] private GameObject cameraFinalPosition;
-
 	private Camera _camera;
 	private void OnEnable()
 	{
@@ -56,8 +53,7 @@ public class PlayerControl : MonoBehaviour
 
 		if (walkState)
 		{
-			transform.Translate(
-				(Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f)) * Time.deltaTime, Space.World);
+			transform.Translate((Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f)) * Time.deltaTime, Space.World);
 			leftPositions.Insert(0, offsetOnLeft.position);
 			rightPositions.Insert(0, offsetOnRight.position);
 		}
@@ -83,6 +79,21 @@ public class PlayerControl : MonoBehaviour
 			OnStartShooting(rightHandGun,rightMuzzle);
 		}*/
 	}
+	
+	private void OnAimModeSwitch()
+	{
+		walkState = false;
+		//Camera.main.GetComponent<CameraFollow>().enabled = false;
+		var cameraTransform = _camera.transform;
+		//_camera.transform.rotation = Quaternion.Euler(Vector3.zero);
+		cameraTransform.DORotate(Vector3.zero, 1f, RotateMode.Fast).OnComplete(() =>
+		{
+			GameEvents.Ge.InvokeOnStartFeeding();
+		});
+		cameraTransform.DOMove(cameraFinalPosition.transform.position, 1f);
+		cameraTransform.parent = transform;
+	}
+	
 	/*
 	[SerializeField] private float movementSpeed = 5f;
 	[SerializeField] private float xForce;
@@ -187,16 +198,5 @@ public class PlayerControl : MonoBehaviour
 			yield return new WaitForSeconds(0.15f);
 		}
 	}*/
-	
-	private void OnAimModeSwitch()
-	{
-		walkState = false;
-		//Camera.main.GetComponent<CameraFollow>().enabled = false;
-		var cameraTransform = _camera.transform;
-		//_camera.transform.rotation = Quaternion.Euler(Vector3.zero);
-		cameraTransform.DORotate(Vector3.zero, 1f, RotateMode.Fast);
-		cameraTransform.DOMove(cameraFinalPosition.transform.position, 1f);
-		cameraTransform.parent = transform;
-	}
 }
 

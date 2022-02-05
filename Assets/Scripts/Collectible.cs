@@ -35,9 +35,9 @@ public class Collectible : MonoBehaviour
 		_handGunController = FindObjectOfType<HandGunController>();
 		
 		if (CompareTag("Solids"))
-			_handGunController = _handGunController.leftHandGun;
+			_handGunController = _handGunController.leftHandController;
 		else
-			_handGunController = _handGunController.rightHandGun;
+			_handGunController = _handGunController.rightHandController;
 
 		/*_playerControl = FindObjectOfType<PlayerControl>();
 		if (CompareTag("Solids"))
@@ -66,6 +66,7 @@ public class Collectible : MonoBehaviour
 		OnAimModeSwitch();
 	}
 
+	
 	private void OnAimModeSwitch()
 	{
 		if (_playerControl.walkState) return;
@@ -126,7 +127,7 @@ public class Collectible : MonoBehaviour
 				 try
 				 {
 					transform.position = Vector3.Lerp(transform.position,
-					 _playerControl.leftPositions[(_playerControl.intervalPos * leftAmmoIndex)],
+					 _playerControl.leftPositions[(_playerControl.leftIntervalPos * leftAmmoIndex)],
 					 Time.deltaTime * damping);
 				 }
 				 catch (Exception e)
@@ -137,7 +138,7 @@ public class Collectible : MonoBehaviour
 				 try
 				 {
 					 transform.position = Vector3.Lerp(transform.position,
-						 _playerControl.rightPositions[(_playerControl.intervalPos * rightAmmoIndex)],
+						 _playerControl.rightPositions[(_playerControl.rightIntervalPos * rightAmmoIndex)],
 						 Time.deltaTime * damping);
 				 }
 				 catch (Exception e)
@@ -154,9 +155,9 @@ public class Collectible : MonoBehaviour
 		if (canFilterTheList)
 		{
 			if(CompareTag("Solids"))
-				_playerControl.leftPositions.RemoveRange((_playerControl.intervalPos * leftAmmoIndex), _playerControl.leftPositions.Count - (_playerControl.intervalPos * leftAmmoIndex));
+				_playerControl.leftPositions.RemoveRange((_playerControl.leftIntervalPos * leftAmmoIndex), _playerControl.leftPositions.Count - (_playerControl.leftIntervalPos * leftAmmoIndex));
 			else
-				_playerControl.rightPositions.RemoveRange((_playerControl.intervalPos * rightAmmoIndex), _playerControl.rightPositions.Count - (_playerControl.intervalPos * rightAmmoIndex));
+				_playerControl.rightPositions.RemoveRange((_playerControl.rightIntervalPos * rightAmmoIndex), _playerControl.rightPositions.Count - (_playerControl.rightIntervalPos * rightAmmoIndex));
 		}
 		
 		canFilterTheList = false;
