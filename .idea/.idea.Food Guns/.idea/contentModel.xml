@@ -6,7 +6,6 @@
     <e p="E:\Workspace\Food Guns" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="AimModeSwitch.cs" t="Include" />
         <e p="BOXOPHOBIC" t="Include">
           <e p="Polyverse Skies" t="Include">
             <e p="Core" t="Include">
@@ -121,7 +120,8 @@
           </e>
           <e p="readme.txt" t="Include" />
         </e>
-        <e p="HungryHuman.cs" t="Include" />
+        <e p="FoodMaker.cs" t="Include" />
+        <e p="HandController.cs" t="Include" />
         <e p="JMO Assets" t="Include">
           <e p="Toony Colors Pro" t="Include">
             <e p="!ToonyColorsPro Readme.txt" t="Include" />
@@ -406,19 +406,47 @@
             </e>
           </e>
         </e>
-        <e p="LeftHandController.cs" t="Include" />
-        <e p="RIghtGun.cs" t="Include" />
-        <e p="RIghtHandController.cs" t="Include" />
+        <e p="LeftGun.cs" t="Include" />
+        <e p="Scenes" t="Include">
+          <e p="Assets" t="Include">
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+              <e p="MopubNetworkInfo.txt" t="Include" />
+              <e p="SkanIds.txt" t="Include" />
+            </e>
+            <e p="Shader" t="Include">
+              <e p="Shader GraphsLiquidFlaskShader_Unlit_Tp.shader" t="Include" />
+              <e p="Shader GraphsPhysicalMaterial3DsMax.shader" t="Include" />
+              <e p="Shader GraphsTextureMover.shader" t="Include" />
+              <e p="TextMeshProBitmap.shader" t="Include" />
+              <e p="TextMeshProDistance Field.shader" t="Include" />
+              <e p="TextMeshProMobileDistance Field.shader" t="Include" />
+              <e p="TextMeshProSprite.shader" t="Include" />
+              <e p="Universal Render PipelineLit.shader" t="Include" />
+              <e p="Universal Render PipelineParticlesUnlit.shader" t="Include" />
+              <e p="Universal Render PipelineUnlit.shader" t="Include" />
+            </e>
+          </e>
+          <e p="ProjectSettings" t="Include">
+            <e p="ProjectVersion.txt" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
+          <e p="AimModeSwitch.cs" t="Include" />
           <e p="CameraFollow.cs" t="Include" />
           <e p="Collectible.cs" t="Include" />
           <e p="GameEvents.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="HandGunController.cs" t="Include" />
+          <e p="HungryHuman.cs" t="Include" />
+          <e p="LeftHandController.cs" t="Include" />
           <e p="PlayerControl.cs" t="Include" />
+          <e p="RIghtGun.cs" t="Include" />
+          <e p="RIghtHandController.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="Trial.cs" t="Include" />
         </e>
-        <e p="Trial.cs" t="Include" />
       </e>
       <e p="Boxophobic.PolyverseSkies.Editor.csproj" t="IncludeRecursive" />
       <e p="Boxophobic.PolyverseSkies.Runtime.csproj" t="IncludeRecursive" />

@@ -23,7 +23,9 @@ public class HandGunController : MonoBehaviour
 
 	private static int _totalAmmo;
 
-	[SerializeField] private bool isLeftHand;
+	public bool isLeftHand;
+
+	private RightGun _leftGunScript, _rightGunScript;
 
 	private void Start()
 	{
@@ -31,6 +33,8 @@ public class HandGunController : MonoBehaviour
 		
 		rightHandController = rightHand.GetComponent<HandGunController>();
 		leftHandController = leftHand.GetComponent<HandGunController>();
+		_leftGunScript = leftGun.GetComponent<RightGun>();
+		_rightGunScript = rightGun.GetComponent<RightGun>();
 	}
 
 	private void Update()
@@ -55,7 +59,7 @@ public class HandGunController : MonoBehaviour
 			totalLeftCollectibles++;
 			_totalAmmo++;
 			//leftGun.transform.DOShakeScale(1f, 1f);
-			GameEvents.Ge.InvokePickUpReaction();
+			_leftGunScript.PickUpReaction();
 		}
 	
 		if (other.CompareTag("Liquids"))
@@ -67,13 +71,16 @@ public class HandGunController : MonoBehaviour
 			totalRightCollectibles++;
 			_totalAmmo++;
 			//rightGun.transform.DOShakeScale(1f, 1f);
-			//GameEvents.Ge.InvokePickUpReaction();
+			// GameEvents.Ge.InvokePickUpRightReaction();
+			_rightGunScript.PickUpReaction();
+
 		}
 	}
 
 	public void OnAmmoFound(HandGunController handGunController, GameObject collectible, GameObject mag)
 	{
 		collectible.GetComponent<Collider>().enabled = false;
+		//DOVirtual.DelayedCall(0.3f, () => collectible.GetComponent<Collider>().enabled = true);
 		
 		var collectibleTransform = collectible.transform;
 		var collectibleComponent = collectible.GetComponent<Collectible>();
@@ -88,7 +95,7 @@ public class HandGunController : MonoBehaviour
 			collectibleTransform.position = mag.transform.position - new Vector3(0f,0f,collectibleComponent.rightAmmoIndex * offsetOnY);
 
 		//if(collectible.CompareTag("Solids"))
-		collectibleTransform.localScale = Vector3.one * handGunController.ammoSize;
+		//collectibleTransform.localScale = Vector3.one * handGunController.ammoSize;
 
 		if (collectible.CompareTag("Liquids"))
 		{
@@ -108,6 +115,8 @@ public class HandGunController : MonoBehaviour
 			print(zPos);
 		}*/
 		collectibleComponent.SwingMag(handGunController, mag);
+
+		collectible.GetComponent<Collider>().enabled = true;
 
 		//print("here");
 	}

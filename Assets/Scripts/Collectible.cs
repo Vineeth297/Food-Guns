@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
@@ -66,7 +67,13 @@ public class Collectible : MonoBehaviour
 		OnAimModeSwitch();
 	}
 
-	
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag != tag) return;
+		
+		_handGunController.OnAmmoFound(_handGunController,gameObject,_handGunController.isLeftHand ? _handGunController.leftMagPos : _handGunController.rightMagPos);
+	}
+
 	private void OnAimModeSwitch()
 	{
 		if (_playerControl.walkState) return;
@@ -79,7 +86,7 @@ public class Collectible : MonoBehaviour
 	private void Shoot()
 	{
 		// transform.Translate(Vector3.forward,Space.World);
-		transform.Translate(camera.transform.forward,Space.World);
+		transform.Translate(camera.transform.forward,Space.Self);
 	}
 
 	public void StartMoving(Vector3 transformPosition)
@@ -122,13 +129,13 @@ public class Collectible : MonoBehaviour
 	 {
 		 if (!startMoving)
 		 {
-			 
 			 if (CompareTag("Solids"))
 				 try
 				 {
-					transform.position = Vector3.Lerp(transform.position,
-					 _playerControl.leftPositions[(_playerControl.leftIntervalPos * leftAmmoIndex)],
-					 Time.deltaTime * damping);
+					 var myPos = _playerControl.leftPositions[(_playerControl.leftIntervalPos * leftAmmoIndex)];
+					 myPos.z = _playerControl.leftPositions[0].z + (_playerControl.leftPositions[0].z - myPos.z);
+					
+					 transform.position = Vector3.Lerp(transform.position, myPos, Time.deltaTime * damping);
 				 }
 				 catch (Exception e)
 				 {
@@ -136,10 +143,11 @@ public class Collectible : MonoBehaviour
 				 }
 			 else
 				 try
-				 {
-					 transform.position = Vector3.Lerp(transform.position,
-						 _playerControl.rightPositions[(_playerControl.rightIntervalPos * rightAmmoIndex)],
-						 Time.deltaTime * damping);
+				 { 
+					 var myPos = _playerControl.rightPositions[(_playerControl.rightIntervalPos * rightAmmoIndex)];
+					 myPos.z = _playerControl.rightPositions[0].z + (_playerControl.rightPositions[0].z - myPos.z);
+
+					 transform.position = Vector3.Lerp(transform.position, myPos, Time.deltaTime * damping);
 				 }
 				 catch (Exception e)
 				 {

@@ -11,8 +11,6 @@ public class GameEvents : MonoBehaviour
 	public Action aimModeSwitch;
 
 	public Action startFeeding;
-	
-	public Action pickupReaction;
 
 	private void Awake()
 	{
@@ -23,6 +21,4 @@ public class GameEvents : MonoBehaviour
 	public void InvokeOnAmmoFound(HandGunController hand,GameObject ammo,GameObject mag) => ammoFound?.Invoke(hand,ammo,mag);
 	public void InvokeOnAimModeSwitch() => aimModeSwitch?.Invoke();
 	public void InvokeOnStartFeeding() => startFeeding?.Invoke();
-	public void InvokePickUpReaction() => pickupReaction?.Invoke();
-
 }
