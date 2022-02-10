@@ -1,17 +1,18 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
+using Random = System.Random;
 
 public class Collectible : MonoBehaviour
 {
 	public bool ammoFound;
 	public bool startMoving;
-	
+	public bool doSnake;
 	public float damping;
 	public Vector3 offsetOnY;
 	public Transform ammoToFollow;
 	public int leftAmmoIndex, rightAmmoIndex;
-	HandGunController _handGunController;
+	[HideInInspector] public HandGunController handGunController;
 	private PlayerControl _playerControl;
 
 	private Rigidbody _rb;
@@ -21,72 +22,81 @@ public class Collectible : MonoBehaviour
 	public bool canFilterTheList;
 
 	public Camera camera;
-	// private void OnEnable()
-	// {
-	// 	GameEvents.Ge.aimModeSwitch += OnAimModeSwitch;
-	// }
-	//
-	// private void OnDisable()
-	// {
-	// 	GameEvents.Ge.aimModeSwitch -= OnAimModeSwitch;
-	// }
+	private Collider _collider;
+
+	private Vector3 _initScale;
+
+	private bool _isPickedUp;
+
+	[SerializeField,Range(0.001f,0.01f)] private float value = 0.001f;
+	
+	private void OnEnable()
+	{
+		GameEvents.Ge.aimModeSwitch += OnAimModeSwitch;
+	}
+	
+	private void OnDisable()
+	{
+		GameEvents.Ge.aimModeSwitch -= OnAimModeSwitch;
+	}
 	void Start()
 	{
+		_collider = GetComponent<Collider>();
 		_playerControl = FindObjectOfType<PlayerControl>();
-		_handGunController = FindObjectOfType<HandGunController>();
+		handGunController = FindObjectOfType<HandGunController>();
 		
 		if (CompareTag("Solids"))
-			_handGunController = _handGunController.leftHandController;
+			handGunController = handGunController.leftHandController;
 		else
-			_handGunController = _handGunController.rightHandController;
+			handGunController = handGunController.rightHandController;
 
 		/*_playerControl = FindObjectOfType<PlayerControl>();
 		if (CompareTag("Solids"))
 			_handGunController = _playerControl.leftHandGun;
 		else
 			_handGunController = _playerControl.rightHandGun;*/
+
+		_initScale = transform.localScale;
+
 	}
 	
 	private void Update()
 	{
-		if(!ammoFound)
-			transform.Rotate(45f * Time.deltaTime, 45f * Time.deltaTime, 45f * Time.deltaTime);
+		// if(doSnake)
+		// 	SnakeMovement();
 		
-		if(ammoFound)
-			SnakeMovement();
+		if(doSnake)
+			FollowTheGuy();
 		
 		if(startMoving)
 			Shoot();
 	}
 
-	
 	public Vector3 followOffset;
-
-	private void LateUpdate()
-	{
-		OnAimModeSwitch();
-	}
-
+	
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.tag != tag) return;
-		
-		_handGunController.OnAmmoFound(_handGunController,gameObject,_handGunController.isLeftHand ? _handGunController.leftMagPos : _handGunController.rightMagPos);
+		if(!other.GetComponent<Collectible>()._isPickedUp)
+			PickUpScaleAnim(other.gameObject);
+		handGunController.OnAmmoFound(handGunController,other.gameObject,handGunController.isLeftHand ? handGunController.leftMagPos : handGunController.rightMagPos);
 	}
 
 	private void OnAimModeSwitch()
 	{
 		if (_playerControl.walkState) return;
 		if (startMoving) return;
-		Vector3 smoothPos = Vector3.Lerp(transform.position, ammoToFollow.position + followOffset , Time.deltaTime * damping);
-		transform.position = smoothPos;
-		transform.eulerAngles = ammoToFollow.eulerAngles;
+		// Vector3 smoothPos = Vector3.Lerp(transform.position, ammoToFollow.position + followOffset , Time.deltaTime * damping);
+		// transform.position = smoothPos;
+		// transform.eulerAngles = ammoToFollow.eulerAngles;
 		//print(transform.position);
+		_collider.enabled = false;
+		doSnake = false;
 	}
 	private void Shoot()
 	{
 		// transform.Translate(Vector3.forward,Space.World);
-		transform.Translate(camera.transform.forward,Space.Self);
+		transform.Translate(camera.transform.forward,Space.World);
 	}
 
 	public void StartMoving(Vector3 transformPosition)
@@ -102,8 +112,6 @@ public class Collectible : MonoBehaviour
 		if (CompareTag("Solids"))
 		{
 			leftAmmoIndex = handGunController.myAmmo.Count;
-		
-			//print("left " + leftAmmoIndex);	
 
 			if (leftAmmoIndex == 1)
 				ammoToFollow = mag.transform;
@@ -113,8 +121,6 @@ public class Collectible : MonoBehaviour
 		else
 		{
 			rightAmmoIndex = handGunController.myAmmo.Count;
-		
-			//print("Right"+ rightAmmoIndex);	
 
 			if (rightAmmoIndex == 1)
 				ammoToFollow = mag.transform;
@@ -135,7 +141,10 @@ public class Collectible : MonoBehaviour
 					 var myPos = _playerControl.leftPositions[(_playerControl.leftIntervalPos * leftAmmoIndex)];
 					 myPos.z = _playerControl.leftPositions[0].z + (_playerControl.leftPositions[0].z - myPos.z);
 					
-					 transform.position = Vector3.Lerp(transform.position, myPos, Time.deltaTime * damping);
+					 transform.position = Vector3.Lerp(transform.position, myPos + Vector3.right * value, Time.deltaTime * damping);
+					 // transform.position = Vector3.SmoothDamp(transform.position, myPos, ref myPos, 1f, Time.deltaTime * damping);
+					 //transform.position = Vector3.MoveTowards(transform.position,myPos,Time.deltaTime * damping);
+					 //transform.position = Vector3.Lerp(transform.position, new Vector3(myPos.x * value,myPos.y,myPos.z), Time.deltaTime * damping);
 				 }
 				 catch (Exception e)
 				 {
@@ -154,13 +163,8 @@ public class Collectible : MonoBehaviour
 					// print($"ammoIndex = {ammoIndex}, result = {_playerControl.intervalPos * ammoIndex}, rightPositions.count = {_playerControl.rightPositions.Count}");
 				 }
 		 }
-		 // transform.position = Vector3.Lerp(transform.position,
-			//  _playerControl.Positions[(_playerControl.IntervalPos * ammoIndex) * (int)_playerControl.PositionValiation(_playerControl.IntervalPos)],
-			//  Time.deltaTime * damping);
-		
-	//	 print($"vlaidated fkiat {_playerControl.PositionValiation(_playerControl.IntervalPos)} for {ammoIndex}");
-
-		if (canFilterTheList)
+		 
+		 if (canFilterTheList)
 		{
 			if(CompareTag("Solids"))
 				_playerControl.leftPositions.RemoveRange((_playerControl.leftIntervalPos * leftAmmoIndex), _playerControl.leftPositions.Count - (_playerControl.leftIntervalPos * leftAmmoIndex));
@@ -170,7 +174,7 @@ public class Collectible : MonoBehaviour
 		
 		canFilterTheList = false;
 	 }
-
+	
 	 /*public bool ammoFound;
 	 public bool startMoving;
 	 
@@ -258,4 +262,25 @@ public class Collectible : MonoBehaviour
 		 
 		 canFilterTheList = false;
 	  }*/
+
+	 private void PickUpScaleAnim(GameObject pickedUpObject)
+	 {
+		 var pickUpInitScale = pickedUpObject.transform.localScale;
+		 Sequence mySequence = DOTween.Sequence();
+
+		 mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale + (pickUpInitScale * 0.2f), 0.5f).SetEase(Ease.OutElastic));
+		 mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale, 0.1f));
+		 pickedUpObject.GetComponent<Collectible>()._isPickedUp= true;
+	 }
+
+	 private void FollowTheGuy()
+	 {
+		 if (ammoToFollow != null)
+		 {
+			 Vector3 smoothPos = Vector3.Lerp(transform.position, ammoToFollow.position + followOffset,
+				 Time.deltaTime * damping);
+			 transform.position = smoothPos;
+			 transform.eulerAngles = ammoToFollow.eulerAngles;
+		 }
+	 }
 }

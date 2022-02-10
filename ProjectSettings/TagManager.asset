@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Solids
   - Liquids
+  - GunSpawner
   layers:
   - Default
   - TransparentFX

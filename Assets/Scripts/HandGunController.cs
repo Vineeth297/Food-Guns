@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -27,6 +29,19 @@ public class HandGunController : MonoBehaviour
 
 	private RightGun _leftGunScript, _rightGunScript;
 
+	private void OnEnable()
+	{
+		GameEvents.Ge.aimModeSwitch += AdiosCollider;
+	//	GameEvents.Ge.aimModeSwitch += SpawnGuns;
+		
+	}
+
+	private void OnDisable()
+	{
+		GameEvents.Ge.aimModeSwitch -= AdiosCollider;
+	//	GameEvents.Ge.aimModeSwitch -= SpawnGuns;
+	}
+	
 	private void Start()
 	{
 		myAmmo = new List<GameObject>();
@@ -59,7 +74,7 @@ public class HandGunController : MonoBehaviour
 			totalLeftCollectibles++;
 			_totalAmmo++;
 			//leftGun.transform.DOShakeScale(1f, 1f);
-			_leftGunScript.PickUpReaction();
+//			_leftGunScript.PickUpReaction();
 		}
 	
 		if (other.CompareTag("Liquids"))
@@ -72,21 +87,29 @@ public class HandGunController : MonoBehaviour
 			_totalAmmo++;
 			//rightGun.transform.DOShakeScale(1f, 1f);
 			// GameEvents.Ge.InvokePickUpRightReaction();
-			_rightGunScript.PickUpReaction();
-
+//			_rightGunScript.PickUpReaction();
 		}
+		
+		if(other.CompareTag("GunSpawner"))
+			SpawnGuns();
 	}
+	
+	
 
 	public void OnAmmoFound(HandGunController handGunController, GameObject collectible, GameObject mag)
 	{
+		if (handGunController.myAmmo.Contains(collectible)) return;
+
 		collectible.GetComponent<Collider>().enabled = false;
-		//DOVirtual.DelayedCall(0.3f, () => collectible.GetComponent<Collider>().enabled = true);
+		DOVirtual.DelayedCall(0.5f, () => collectible.GetComponent<Collider>().enabled = true);
 		
 		var collectibleTransform = collectible.transform;
 		var collectibleComponent = collectible.GetComponent<Collectible>();
 
+		
 		handGunController.myAmmo.Add(collectible);
 		collectibleComponent.ammoFound = true;
+		collectibleComponent.doSnake = true;
 		collectibleComponent.transform.rotation = Quaternion.Euler(Vector3.zero);
 
 		if(collectibleTransform.CompareTag("Solids"))
@@ -116,7 +139,7 @@ public class HandGunController : MonoBehaviour
 		}*/
 		collectibleComponent.SwingMag(handGunController, mag);
 
-		collectible.GetComponent<Collider>().enabled = true;
+		//collectible.GetComponent<Collider>().enabled = true;
 
 		//print("here");
 	}
@@ -158,5 +181,16 @@ public class HandGunController : MonoBehaviour
 			//print(_totalAmmo);
 			yield return new WaitForSeconds(0.15f);
 		}
+	}
+
+	private void AdiosCollider()
+	{
+		gameObject.GetComponent<Collider>().enabled = false;
+	}
+
+	private void SpawnGuns()
+	{
+		rightGun.SetActive(true);
+		leftGun.SetActive(true);
 	}
 }
