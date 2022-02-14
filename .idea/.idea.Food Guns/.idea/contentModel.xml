@@ -121,6 +121,7 @@
           </e>
           <e p="readme.txt" t="Include" />
         </e>
+        <e p="EatingScript.cs" t="Include" />
         <e p="Follow.cs" t="Include" />
         <e p="FoodMaker.cs" t="Include" />
         <e p="GunSpawnerGate.cs" t="Include" />

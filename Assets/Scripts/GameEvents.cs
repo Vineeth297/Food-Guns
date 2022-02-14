@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 using UnityEngine.Serialization;
 
 public class GameEvents : MonoBehaviour
@@ -12,6 +13,7 @@ public class GameEvents : MonoBehaviour
 
 	public Action startFeeding;
 
+	public Action stopCamera;
 	private void Awake()
 	{
 		if(!Ge) Ge = this;
@@ -21,4 +23,5 @@ public class GameEvents : MonoBehaviour
 	public void InvokeOnAmmoFound(HandGunController hand,GameObject ammo,GameObject mag) => ammoFound?.Invoke(hand,ammo,mag);
 	public void InvokeOnAimModeSwitch() => aimModeSwitch?.Invoke();
 	public void InvokeOnStartFeeding() => startFeeding?.Invoke();
+	public void InvokeStopCamera() => stopCamera?.Invoke();
 }
