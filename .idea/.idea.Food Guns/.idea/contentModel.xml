@@ -411,6 +411,7 @@
           </e>
         </e>
         <e p="LeftGun.cs" t="Include" />
+        <e p="ObstacleHead.cs" t="Include" />
         <e p="Scenes" t="Include">
           <e p="Assets" t="Include">
             <e p="Resources" t="Include">

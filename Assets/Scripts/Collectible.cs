@@ -88,7 +88,7 @@ public class Collectible : MonoBehaviour
 		{
 			if (!_disableCameraFollow)
 			{
-				GameEvents.Ge.InvokeStopCamera();
+				//GameEvents.Ge.InvokeStopCamera();
 
 				_disableCameraFollow = true;
 				print("Camera");	

@@ -9,13 +9,13 @@ using UnityEngine.Serialization;
 public class HandGunController : MonoBehaviour
 {
 	public List<GameObject> myAmmo;
-
+	
 	public HandGunController rightHandController,leftHandController;
 
 	[SerializeField] private float ammoSize;
 	[SerializeField] private GameObject rightHand;
 	[SerializeField] private GameObject leftHand;
-	private Animator _handAnimator;
+	public Animator handAnimator;
 	[SerializeField] private GameObject leftMuzzle, rightMuzzle;
 	[SerializeField] private GameObject leftGun, rightGun;
 	[SerializeField] private float offsetOnY;
@@ -31,6 +31,7 @@ public class HandGunController : MonoBehaviour
 	private RightGun _leftGunScript, _rightGunScript;
 
 	private static readonly int HoldGunHash = Animator.StringToHash("ToHoldGun");
+	private static readonly int ToShoot = Animator.StringToHash("ToShoot");
 
 	public bool canShoot;
 
@@ -41,6 +42,17 @@ public class HandGunController : MonoBehaviour
 	[SerializeField] private ParticleSystem leftMuzzleParticle, rightMuzzleParticle;
 	
 	[SerializeField] private GameObject deActivator;
+
+	[SerializeField] private GameObject loadingBurgerAmmo;
+	[SerializeField] private GameObject loadingCokeAmmo;
+	private Vector3 _burgerAmmoPos,_cokeAmmoPos;
+	
+	
+	private Tweener _tweener;
+
+	private float _fireSpeed = 0.3f;
+	private float _nextFire = 0.0f;
+	
 	private void OnEnable()
 	{
 		GameEvents.Ge.aimModeSwitch += AdiosCollider;
@@ -58,17 +70,13 @@ public class HandGunController : MonoBehaviour
 	{
 		myAmmo = new List<GameObject>();
 		
-		rightHandController = rightHand.GetComponent<HandGunController>();
-		leftHandController = leftHand.GetComponent<HandGunController>();
 		_leftGunScript = leftGun.GetComponent<RightGun>();
 		_rightGunScript = rightGun.GetComponent<RightGun>();
-
-		if (!leftGun)
-			_handAnimator = rightHand.GetComponent<Animator>();
-		else
-			_handAnimator = leftHand.GetComponent<Animator>();
-
+		
+		handAnimator = GetComponent<Animator>();
+		
 		_aimModeSwitch = FindObjectOfType<AimModeSwitch>();
+
 	}
 
 	private void Update()
@@ -84,6 +92,7 @@ public class HandGunController : MonoBehaviour
 		// 	}
 		// }
 		
+		/*
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			if(isLeftHand)
@@ -91,6 +100,17 @@ public class HandGunController : MonoBehaviour
 			else 
 				OnStartShooting(rightHandController,rightMuzzle);
 		}
+		else */
+		if (Input.GetKey(KeyCode.Space) && Time.time > _nextFire)
+		{
+			_nextFire = Time.time + _fireSpeed;
+			if(isLeftHand)
+				OnStartShooting(leftHandController,leftMuzzle);
+			else 
+				OnStartShooting(rightHandController,rightMuzzle);
+			
+		}
+		
 	}
 	
 
@@ -158,10 +178,10 @@ public class HandGunController : MonoBehaviour
 		//unparent the first ammo from player
 		if (handGunController.myAmmo.Count == 0) return;
 		
-		StartCoroutine(Shoot(handGunController,muzzle));
+		StartCoroutine(Shoot(handGunController,muzzle,handAnimator));
 	}
 
-	IEnumerator Shoot(HandGunController handGunController, GameObject muzzle)
+	IEnumerator Shoot(HandGunController handGunController, GameObject muzzle,Animator anim)
 	{
 		var bullet = handGunController.myAmmo[0];
 		bullet.GetComponent<Collectible>().ammoToFollow = bullet.transform;
@@ -174,11 +194,15 @@ public class HandGunController : MonoBehaviour
 		if (bullet.CompareTag("Solids"))
 		{
 			leftMuzzleParticle.Play();
+			LoadingAmmoIllusion(loadingBurgerAmmo,_burgerAmmoPos);
 		}
 		else
 		{
 			rightMuzzleParticle.Play();
+			LoadingAmmoIllusion(loadingCokeAmmo,_cokeAmmoPos);
 		}
+		
+		anim.SetTrigger(ToShoot);
 		
 		yield return null;
 		
@@ -212,10 +236,16 @@ public class HandGunController : MonoBehaviour
 			
 		}*/
 	}
+	
+	
 
 	private void AdiosCollider()
 	{
 		gameObject.GetComponent<Collider>().enabled = false;
+		rightGun.transform.parent = rightHand.transform;
+		leftGun.transform.parent = leftHand.transform;
+		_burgerAmmoPos = loadingBurgerAmmo.transform.position;
+		_cokeAmmoPos = loadingCokeAmmo.transform.position;
 	}
 
 	private void SpawnGuns()
@@ -224,7 +254,7 @@ public class HandGunController : MonoBehaviour
 		rightGun.SetActive(true);
 		leftGun.SetActive(true);
 
-		_handAnimator.SetTrigger(HoldGunHash);
+		handAnimator.SetTrigger(HoldGunHash);
 		
 		// for (int i = 0; i < myAmmo.Count; i++)
 		// {
@@ -240,4 +270,19 @@ public class HandGunController : MonoBehaviour
 		// 	}
 		// }
 	}
+
+	private void LoadingAmmoIllusion(GameObject illusionAmmo,Vector3 initPos)
+	{
+
+		if (_tweener.IsActive())
+		{
+			_tweener.Kill();
+			illusionAmmo.transform.position = initPos;
+		}
+		_tweener = illusionAmmo.transform.DOMove(initPos + Vector3.forward * 0.5f, 1f).OnComplete(() =>
+		{
+			illusionAmmo.transform.position = initPos;
+		});
+	}
+	
 }
