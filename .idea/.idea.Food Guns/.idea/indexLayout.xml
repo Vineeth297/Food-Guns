@@ -71,14 +71,6 @@
       <Path>Logs</Path>
       <Path>Recordings</Path>
       <Path>Temp</Path>
-      <Path>Test_1_BurstDebugInformation_DoNotShip</Path>
-      <Path>Test_2_BurstDebugInformation_DoNotShip</Path>
-      <Path>Test_3_BurstDebugInformation_DoNotShip</Path>
-      <Path>Test_4_BurstDebugInformation_DoNotShip</Path>
-      <Path>Test_5_BurstDebugInformation_DoNotShip</Path>
-      <Path>Test_6_BurstDebugInformation_DoNotShip</Path>
-      <Path>Test_7_BurstDebugInformation_DoNotShip</Path>
-      <Path>Test_BurstDebugInformation_DoNotShip</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>
