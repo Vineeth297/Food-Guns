@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 06d492c15c26aca4489322b7c42f3496
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: upgrade-bucks4
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: upgrade-bucks4
+      rect:
+        serializedVersion: 2
+        x: 4.026751
+        y: 41.026752
+        width: 247.93034
+        height: 173.89713
+      alignment: 9
+      pivot: {x: 0.5000326, y: 0.500142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -121.99191, y: 8.024689}
+        - {x: -123.99191, y: 11.024689}
+        - {x: -123.99191, y: 58.02469}
+        - {x: -74.99191, y: 87.02469}
+        - {x: 24.008087, y: 87.02469}
+        - {x: 57.008087, y: 72.02469}
+        - {x: 124.00809, y: 29.024689}
+        - {x: 124.00809, y: -6.9753113}
+        - {x: 99.00809, y: -35.97531}
+        - {x: 75.00809, y: -81.97531}
+        - {x: 35.008087, y: -86.97531}
+        - {x: -56.991913, y: -86.97531}
+      physicsShape:
+      - - {x: 38.008087, y: -56.97531}
+        - {x: 46.008083, y: -55.97531}
+        - {x: 59.008083, y: -63.97531}
+        - {x: 73.00808, y: -64.97531}
+        - {x: 95.00809, y: -33.97531}
+        - {x: 105.00808, y: -18.975311}
+        - {x: 116.00809, y: 0.02468872}
+        - {x: 119.00808, y: -1.9753113}
+        - {x: 123.00809, y: 7.0246887}
+        - {x: 123.00809, y: 21.024689}
+        - {x: 107.00808, y: 33.02469}
+        - {x: 86.00808, y: 43.024685}
+        - {x: 62.008087, y: 53.024685}
+        - {x: 55.008087, y: 68.02469}
+        - {x: 46.008083, y: 71.02469}
+        - {x: 11.008087, y: 69.02469}
+        - {x: -3.9919128, y: 67.02468}
+        - {x: -17.991913, y: 65.02469}
+        - {x: -16.991913, y: 70.02469}
+        - {x: -24.991913, y: 78.02469}
+        - {x: -27.991913, y: 78.02469}
+        - {x: -34.991913, y: 87.02469}
+        - {x: -47.991913, y: 87.02469}
+        - {x: -73.99191, y: 75.02469}
+        - {x: -98.991905, y: 60.024685}
+        - {x: -110.99191, y: 51.02469}
+        - {x: -122.99191, y: 40.024685}
+        - {x: -123.99191, y: 35.02469}
+        - {x: -123.99191, y: 29.024689}
+        - {x: -120.991905, y: 25.024689}
+        - {x: -122.99191, y: 17.024689}
+        - {x: -117.991905, y: 9.024689}
+        - {x: -104.991905, y: -0.9753113}
+        - {x: -96.99191, y: -13.975311}
+        - {x: -70.99191, y: -47.97531}
+        - {x: -46.991913, y: -72.9753}
+        - {x: -37.991913, y: -85.9753}
+        - {x: -33.991913, y: -86.97531}
+        - {x: -25.991913, y: -86.97531}
+        - {x: -21.991913, y: -85.9753}
+        - {x: 0.008087158, y: -73.97531}
+        - {x: 23.008085, y: -58.975307}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223bc4def60143b88d08b99360f8707f
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      upgrade-bucks4: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

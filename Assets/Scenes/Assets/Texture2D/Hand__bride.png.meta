@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 57b28e6d8b6f3aa49a16de9ca5e54db2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Hand__bride
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hand__bride
+      rect:
+        serializedVersion: 2
+        x: 46.076122
+        y: 15.07612
+        width: 123.84775
+        height: 226.88097
+      alignment: 9
+      pivot: {x: 0.6614886, y: 0.49772304}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: -103.5166}
+        - {x: -62, y: 7.4833984}
+        - {x: -62, y: 45.4834}
+        - {x: -20, y: 113.4834}
+        - {x: 6, y: 113.4834}
+        - {x: 12, y: 112.4834}
+        - {x: 62, y: 61.4834}
+        - {x: 62, y: -113.5166}
+        - {x: 3, y: -113.5166}
+      physicsShape:
+      - - {x: 59.999996, y: -103.5166}
+        - {x: 61, y: -98.516594}
+        - {x: 61, y: -92.516594}
+        - {x: 56, y: -65.5166}
+        - {x: 47, y: -58.5166}
+        - {x: 47, y: -20.5166}
+        - {x: 58, y: 20.483398}
+        - {x: 59, y: 39.483395}
+        - {x: 47, y: 65.4834}
+        - {x: 29, y: 81.4834}
+        - {x: 15, y: 101.4834}
+        - {x: 4, y: 111.4834}
+        - {x: -11, y: 111.4834}
+        - {x: -6, y: 81.4834}
+        - {x: -2.999998, y: 82.4834}
+        - {x: -4, y: 44.4834}
+        - {x: -6.999998, y: 28.483398}
+        - {x: -25.999996, y: 11.483398}
+        - {x: -48, y: 36.4834}
+        - {x: -59, y: 36.4834}
+        - {x: -59.999992, y: 33.4834}
+        - {x: -59.999992, y: 29.483397}
+        - {x: -46, y: 5.4833984}
+        - {x: -32, y: -7.5166016}
+        - {x: -28, y: -11.516602}
+        - {x: -17, y: -19.516602}
+        - {x: 1, y: -30.5166}
+        - {x: 1, y: -39.5166}
+        - {x: -1, y: -54.516598}
+        - {x: -9, y: -63.5166}
+        - {x: -17, y: -90.5166}
+        - {x: -15, y: -99.516594}
+        - {x: -4, y: -96.5166}
+        - {x: -6.999998, y: -105.516594}
+        - {x: 1, y: -107.516594}
+        - {x: 14, y: -105.516594}
+        - {x: 20, y: -112.5166}
+        - {x: 23, y: -112.5166}
+        - {x: 33, y: -103.5166}
+        - {x: 44, y: -112.5166}
+        - {x: 48, y: -112.5166}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15629f7d2e1d4973859bde3e417fd635
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hand__bride: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

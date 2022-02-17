@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 51a48a2d888d2e844a4adc4d8cca7454
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Shadow_tottoo_black
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shadow_tottoo_black
+      rect:
+        serializedVersion: 2
+        x: 48.076122
+        y: 14.07612
+        width: 137.84775
+        height: 229.89713
+      alignment: 9
+      pivot: {x: 0.57979816, y: 0.49554288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: -115.02468}
+        - {x: -69, y: -38.02468}
+        - {x: -69, y: 63.97532}
+        - {x: -26, y: 114.97532}
+        - {x: 31, y: 114.97532}
+        - {x: 69, y: 82.97532}
+        - {x: 69, y: -115.02468}
+      physicsShape:
+      - - {x: 66, y: -82.02468}
+        - {x: 62, y: -76.02468}
+        - {x: 59, y: -47.024677}
+        - {x: 56, y: -35.02468}
+        - {x: 58, y: -6.0246806}
+        - {x: 61, y: 9.975319}
+        - {x: 63.999996, y: 24.975319}
+        - {x: 65, y: 44.975315}
+        - {x: 65, y: 50.97532}
+        - {x: 58, y: 59.97532}
+        - {x: 47, y: 86.97532}
+        - {x: 26, y: 101.97532}
+        - {x: 19, y: 97.97531}
+        - {x: 11, y: 110.97532}
+        - {x: 9, y: 113.97532}
+        - {x: 1.000001, y: 113.97532}
+        - {x: -6, y: 108.97532}
+        - {x: -14, y: 102.97532}
+        - {x: -18, y: 96.97531}
+        - {x: -17, y: 83.97532}
+        - {x: -11.999998, y: 42.97532}
+        - {x: -13, y: 34.97532}
+        - {x: -11.999998, y: 20.975319}
+        - {x: -26, y: 5.975319}
+        - {x: -40, y: 21.975317}
+        - {x: -55.999992, y: 32.97532}
+        - {x: -64, y: 31.975319}
+        - {x: -67, y: 23.975319}
+        - {x: -67, y: 17.975319}
+        - {x: -55.999992, y: 3.9753184}
+        - {x: -66, y: 4.975319}
+        - {x: -67, y: 1.9753189}
+        - {x: -67, y: -1.0246811}
+        - {x: -51, y: -14.024681}
+        - {x: -20, y: -28.02468}
+        - {x: -11, y: -28.02468}
+        - {x: -1, y: -41.024677}
+        - {x: -1, y: -57.02468}
+        - {x: -3, y: -101.02468}
+        - {x: -2, y: -105.02468}
+        - {x: 7, y: -111.02468}
+        - {x: 18, y: -113.02468}
+        - {x: 52, y: -113.02468}
+        - {x: 61, y: -112.02468}
+        - {x: 68, y: -107.02467}
+        - {x: 68, y: -100.02467}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c17f80755e7415984bf9853eb4c0a18
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shadow_tottoo_black: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: a7ed3bd8b214b9b48a82da30eb41d26d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Coffee_shoop_Machine-LV2
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Coffee_shoop_Machine-LV2
+      rect:
+        serializedVersion: 2
+        x: 23.07612
+        y: 39.026752
+        width: 208.89713
+        height: 177.89713
+      alignment: 9
+      pivot: {x: 0.50227535, y: 0.50013876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 68.47531, y: 89.02469}
+        - {x: 104.47531, y: 59.024685}
+        - {x: 104.47531, y: 24.024689}
+        - {x: 97.47531, y: -20.975311}
+        - {x: 104.47531, y: -45.97531}
+        - {x: 104.47531, y: -71.97531}
+        - {x: 103.47531, y: -75.97531}
+        - {x: 9.475311, y: -84.97531}
+        - {x: -33.52469, y: -88.97531}
+        - {x: -58.524685, y: -88.97531}
+        - {x: -104.52468, y: -66.97531}
+        - {x: -104.52468, y: 50.02469}
+        - {x: -98.52469, y: 58.02469}
+        - {x: -58.524685, y: 83.02469}
+        - {x: -4.5246887, y: 89.02469}
+      physicsShape:
+      - - {x: 103.47531, y: -68.97531}
+        - {x: 103.47531, y: -55.97531}
+        - {x: 94.47531, y: -48.975307}
+        - {x: 74.47531, y: -37.97531}
+        - {x: 73.4753, y: -12.975311}
+        - {x: 78.47531, y: -26.97531}
+        - {x: 85.47531, y: -24.975311}
+        - {x: 88.47531, y: -18.975311}
+        - {x: 81.47531, y: 0.02468872}
+        - {x: 73.4753, y: 9.024689}
+        - {x: 93.47531, y: 16.024689}
+        - {x: 99.4753, y: 21.024689}
+        - {x: 98.4753, y: 53.024685}
+        - {x: 69.47531, y: 68.02469}
+        - {x: 55.47531, y: 72.02469}
+        - {x: 56.47531, y: 83.02469}
+        - {x: 51.47531, y: 87.02469}
+        - {x: 21.475311, y: 87.02469}
+        - {x: 16.475311, y: 86.02468}
+        - {x: 14.475311, y: 82.02469}
+        - {x: 6.4753113, y: 80.02468}
+        - {x: -10.524689, y: 81.02469}
+        - {x: -29.524687, y: 69.02469}
+        - {x: -40.52469, y: 75.02469}
+        - {x: -54.52469, y: 75.02469}
+        - {x: -59.524685, y: 74.02469}
+        - {x: -71.52469, y: 60.024685}
+        - {x: -88.52469, y: 59.024685}
+        - {x: -97.52468, y: 56.02469}
+        - {x: -102.52469, y: 50.02469}
+        - {x: -102.52469, y: -63.97531}
+        - {x: -99.52469, y: -68.97531}
+        - {x: -55.52469, y: -87.97531}
+        - {x: -29.524687, y: -87.97531}
+        - {x: 89.47531, y: -73.97531}
+        - {x: 95.47531, y: -72.9753}
+        - {x: 99.4753, y: -71.97531}
+      - - {x: -62.52469, y: 62.02469}
+        - {x: -63.52469, y: 61.02469}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345901aa36bb48e8aaf8c2fb4ff19e2f
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Coffee_shoop_Machine-LV2: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

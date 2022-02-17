@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: b90b208a0777d6844b32c07f1509f7b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Shadow_Harley_black
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shadow_Harley_black
+      rect:
+        serializedVersion: 2
+        x: 43.076122
+        y: 14.026751
+        width: 130.88097
+        height: 227.9465
+      alignment: 9
+      pivot: {x: 0.64886343, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.51661, y: -114}
+        - {x: -65.51661, y: 11}
+        - {x: -65.51661, y: 54.000004}
+        - {x: -26.51661, y: 114}
+        - {x: 14.483391, y: 114}
+        - {x: 62.48339, y: 71}
+        - {x: 65.48339, y: 26}
+        - {x: 65.48339, y: -114}
+      physicsShape:
+      - - {x: 63.48339, y: -83}
+        - {x: 62.483387, y: -75}
+        - {x: 63.48339, y: -76}
+        - {x: 63.48339, y: -70}
+        - {x: 58.48339, y: -61}
+        - {x: 45.48339, y: -63}
+        - {x: 46.48339, y: -22}
+        - {x: 57.48339, y: 18}
+        - {x: 58.48339, y: 39}
+        - {x: 49.48339, y: 62}
+        - {x: 19.48339, y: 91.99999}
+        - {x: 7.483391, y: 107.99999}
+        - {x: 0.4833908, y: 113}
+        - {x: -7.5166073, y: 113}
+        - {x: -12.516609, y: 111}
+        - {x: -11.516609, y: 98.99999}
+        - {x: -7.5166073, y: 82}
+        - {x: -6.516609, y: 44}
+        - {x: -9.516609, y: 29.999998}
+        - {x: -19.51661, y: 19}
+        - {x: -33.516605, y: 14}
+        - {x: -44.51661, y: 32}
+        - {x: -62.51661, y: 36}
+        - {x: -63.51661, y: 34}
+        - {x: -63.51661, y: 29.999998}
+        - {x: -48.51661, y: 4}
+        - {x: -35.51661, y: -9}
+        - {x: -18.51661, y: -22.999998}
+        - {x: -2.5166092, y: -33}
+        - {x: 1.4833908, y: -55}
+        - {x: -8.516609, y: -52.999996}
+        - {x: -20.516605, y: -61}
+        - {x: -18.51661, y: -97.99999}
+        - {x: -4.516609, y: -107.99999}
+        - {x: 13.483391, y: -107.99999}
+        - {x: 18.48339, y: -113}
+        - {x: 30.48339, y: -113}
+        - {x: 42.48339, y: -111}
+        - {x: 48.48339, y: -113}
+        - {x: 49.48339, y: -113}
+        - {x: 63.48339, y: -103}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c359a363643246339e7701f57a723944
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shadow_Harley_black: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

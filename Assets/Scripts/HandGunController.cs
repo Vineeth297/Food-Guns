@@ -1,10 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class HandGunController : MonoBehaviour
 {
@@ -56,16 +53,13 @@ public class HandGunController : MonoBehaviour
 	private void OnEnable()
 	{
 		GameEvents.Ge.aimModeSwitch += AdiosCollider;
-	//	GameEvents.Ge.aimModeSwitch += SpawnGuns;
-		
 	}
 
 	private void OnDisable()
 	{
 		GameEvents.Ge.aimModeSwitch -= AdiosCollider;
-	//	GameEvents.Ge.aimModeSwitch -= SpawnGuns;
 	}
-	
+
 	private void Start()
 	{
 		myAmmo = new List<GameObject>();
@@ -91,16 +85,7 @@ public class HandGunController : MonoBehaviour
 		// 			OnStartShooting(rightHandController,rightMuzzle);
 		// 	}
 		// }
-		
-		/*
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			if(isLeftHand)
-				OnStartShooting(leftHandController,leftMuzzle);
-			else 
-				OnStartShooting(rightHandController,rightMuzzle);
-		}
-		else */
+	
 		if (Input.GetKey(KeyCode.Space) && Time.time > _nextFire)
 		{
 			_nextFire = Time.time + _fireSpeed;
@@ -108,18 +93,13 @@ public class HandGunController : MonoBehaviour
 				OnStartShooting(leftHandController,leftMuzzle);
 			else 
 				OnStartShooting(rightHandController,rightMuzzle);
-			
 		}
-		
 	}
-	
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Solids"))
 		{
-			print("Solids Triggered");
-			print(gameObject);
 			GameEvents.Ge.InvokeOnAmmoFound(leftHandController, other.gameObject, leftMagPos);
 			OnAmmoFound(leftHandController, other.gameObject, leftMagPos);
 			totalLeftCollectibles++;
@@ -128,8 +108,6 @@ public class HandGunController : MonoBehaviour
 	
 		if (other.CompareTag("Liquids"))
 		{
-			print("Liquids Triggered");
-			print(gameObject);
 			GameEvents.Ge.InvokeOnAmmoFound(rightHandController, other.gameObject, rightMagPos);
 			OnAmmoFound(rightHandController, other.gameObject, rightMagPos);
 			totalRightCollectibles++;
@@ -166,10 +144,6 @@ public class HandGunController : MonoBehaviour
 			collectibleTransform.position = mag.transform.position - new Vector3(0f,0f,collectibleComponent.rightAmmoIndex * offsetOnY);
 
 		collectibleComponent.SwingMag(handGunController, mag);
-
-		//collectible.GetComponent<Collider>().enabled = true;
-
-		//print("here");
 	}
 
 	public void OnStartShooting(HandGunController handGunController,GameObject muzzle)
@@ -205,36 +179,6 @@ public class HandGunController : MonoBehaviour
 		anim.SetTrigger(ToShoot);
 		
 		yield return null;
-		
-
-		/*while (handGunController.myAmmo.Count != 0)
-		{
-			GameObject bullet = handGunController.myAmmo[0];
-			handGunController.myAmmo.RemoveAt(0);
-			
-			bullet.GetComponent<Collectible>().StartMoving(muzzle.transform.position);
-			
-			for (int i = 1; i < handGunController.myAmmo.Count; i++)
-			{
-				var ammoComponent = handGunController.myAmmo[i].GetComponent<Collectible>();
-				
-				if(ammoComponent.CompareTag("Solids"))
-					ammoComponent.leftAmmoIndex -= 1;
-				else
-					ammoComponent.rightAmmoIndex -= 1;
-			}
-
-			_totalAmmo--;
-			
-			if(bullet.CompareTag("Solids"))
-				totalLeftCollectibles--;
-			else
-				totalRightCollectibles--;
-			
-			//print(_totalAmmo);
-			yield return new WaitForSeconds(0.15f);
-			
-		}*/
 	}
 	
 	
@@ -256,19 +200,6 @@ public class HandGunController : MonoBehaviour
 
 		handAnimator.SetTrigger(HoldGunHash);
 		
-		// for (int i = 0; i < myAmmo.Count; i++)
-		// {
-		// 	if (isLeftHand)
-		// 	{
-		// 		yield return new WaitForSeconds(0.1f);
-		// 		leftHandController.myAmmo[i].SetActive(false);
-		// 	}
-		// 	else
-		// 	{
-		// 		yield return new WaitForSeconds(0.1f);
-		// 		rightHandController.myAmmo[i].SetActive(false);
-		// 	}
-		// }
 	}
 
 	private void LoadingAmmoIllusion(GameObject illusionAmmo,Vector3 initPos)
@@ -285,4 +216,8 @@ public class HandGunController : MonoBehaviour
 		});
 	}
 	
+	private void OnObstacleHeadEatingBurger()
+	{
+		myAmmo.RemoveAt(myAmmo.Count - 1);
+	}
 }

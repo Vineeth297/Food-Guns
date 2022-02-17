@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 534df90b2e823df4f9103f2d4ee32b85
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Hand_thanos_BIG
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hand_thanos_BIG
+      rect:
+        serializedVersion: 2
+        x: 47.0335
+        y: 14.07612
+        width: 121.93975
+        height: 227.89713
+      alignment: 9
+      pivot: {x: 0.66398776, y: 0.4998917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.00338, y: -108.02469}
+        - {x: -61.003376, y: -44.02468}
+        - {x: -61.003376, y: 66.97532}
+        - {x: -28.003376, y: 113.97532}
+        - {x: 14.996624, y: 113.97532}
+        - {x: 50.996624, y: 85.97532}
+        - {x: 60.996624, y: -4.024681}
+        - {x: 60.996624, y: -105.02467}
+        - {x: 59.996624, y: -110.02468}
+        - {x: 45.996624, y: -114.02468}
+        - {x: -17.003376, y: -114.02468}
+      physicsShape:
+      - - {x: 59.99662, y: -51.02468}
+        - {x: 51.996624, y: 0.9753189}
+        - {x: 50.996624, y: 1.9753189}
+        - {x: 50.996624, y: 58.975315}
+        - {x: 46.99662, y: 74.97532}
+        - {x: 42.99662, y: 85.97531}
+        - {x: 34.996624, y: 92.97532}
+        - {x: 29.996624, y: 92.97532}
+        - {x: 19.996624, y: 101.97532}
+        - {x: 5.996624, y: 111.97532}
+        - {x: -12.003376, y: 111.97532}
+        - {x: -19.003376, y: 109.97532}
+        - {x: -25.003376, y: 100.97532}
+        - {x: -22.003376, y: 64.97532}
+        - {x: -21.003376, y: 51.97532}
+        - {x: -23.003372, y: 31.975319}
+        - {x: -31.003376, y: 27.975319}
+        - {x: -42.003376, y: 39.975315}
+        - {x: -47.00337, y: 42.975315}
+        - {x: -57.003376, y: 41.97532}
+        - {x: -60.00337, y: 38.97532}
+        - {x: -60.00337, y: 33.97532}
+        - {x: -53.00337, y: 14.975318}
+        - {x: -44.003376, y: 5.975319}
+        - {x: -34.003372, y: -1.0246811}
+        - {x: -14.003376, y: -10.02468}
+        - {x: -4.003376, y: -22.024681}
+        - {x: -13.003376, y: -54.024677}
+        - {x: -23.003372, y: -89.02468}
+        - {x: -22.003376, y: -96.02468}
+        - {x: -11.003376, y: -105.02467}
+        - {x: 9.996625, y: -112.02468}
+        - {x: 43.996624, y: -112.02468}
+        - {x: 57.996624, y: -102.02468}
+        - {x: 59.99662, y: -97.02468}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02c98ab0600d4e39bdd7868960b42822
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hand_thanos_BIG: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

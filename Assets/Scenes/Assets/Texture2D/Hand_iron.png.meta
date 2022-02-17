@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: a3665f42ff96aa54b837f630d5e93a8e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Hand_iron
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hand_iron
+      rect:
+        serializedVersion: 2
+        x: 46.026752
+        y: 14.07612
+        width: 123.936966
+        height: 227.87256
+      alignment: 9
+      pivot: {x: 0.6614108, y: 0.49994558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.995232, y: -114.0124}
+        - {x: -61.99523, y: -9.012398}
+        - {x: -61.99523, y: 47.987602}
+        - {x: -20.995232, y: 113.9876}
+        - {x: 22.004768, y: 113.9876}
+        - {x: 62.00477, y: 90.9876}
+        - {x: 62.00477, y: -68.0124}
+        - {x: 54.00477, y: -114.0124}
+      physicsShape:
+      - - {x: 47.00477, y: -44.012398}
+        - {x: 47.00477, y: -19.012398}
+        - {x: 58.00477, y: 11.987602}
+        - {x: 61.00477, y: 26.9876}
+        - {x: 61.00477, y: 38.987602}
+        - {x: 57.00477, y: 52.9876}
+        - {x: 49.00477, y: 67.9876}
+        - {x: 34.00477, y: 82.9876}
+        - {x: 26.004768, y: 86.9876}
+        - {x: 19.004768, y: 103.9876}
+        - {x: 3.0047684, y: 112.9876}
+        - {x: -3.9952316, y: 112.9876}
+        - {x: -9.99523, y: 107.987595}
+        - {x: -8.995232, y: 92.9876}
+        - {x: -9.99523, y: 34.987602}
+        - {x: -18.995232, y: 23.987602}
+        - {x: -34.99523, y: 18.987602}
+        - {x: -37.99523, y: 25.987602}
+        - {x: -43.99523, y: 32.987602}
+        - {x: -58.99523, y: 37.987602}
+        - {x: -60.99523, y: 31.987602}
+        - {x: -60.99523, y: 22.9876}
+        - {x: -49.99523, y: 0.98760223}
+        - {x: -25.995228, y: -19.012398}
+        - {x: -5.9952316, y: -33.012398}
+        - {x: -11.995232, y: -71.0124}
+        - {x: -12.995232, y: -99.01239}
+        - {x: -8.995232, y: -105.01239}
+        - {x: 10.004769, y: -112.0124}
+        - {x: 44.00477, y: -112.0124}
+        - {x: 48.00477, y: -109.0124}
+        - {x: 51.00477, y: -105.01239}
+        - {x: 51.00477, y: -79.0124}
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc0198545fb428da1ef0e0770a5c27a
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hand_iron: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

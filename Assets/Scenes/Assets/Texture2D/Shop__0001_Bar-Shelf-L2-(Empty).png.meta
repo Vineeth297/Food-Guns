@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: 2a1df704e6068c649ab04cece9301ef7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Shop__0001_Bar-Shelf-L2-(Empty)
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 29.813665
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shop__0001_Bar-Shelf-L2-(Empty)
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 48
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -124, y: -24}
+        - {x: -128, y: -14}
+        - {x: -128, y: 3.9999998}
+        - {x: 59.999996, y: 24}
+        - {x: 127.999985, y: 24}
+        - {x: 127.999985, y: 13}
+        - {x: 110.99999, y: -3.9999998}
+        - {x: -44.000008, y: -24}
+      physicsShape:
+      - - {x: -80.00001, y: -10.999999}
+        - {x: -62.000004, y: -9}
+        - {x: -25.000008, y: -3.9999998}
+        - {x: -6.0000076, y: -1.9999999}
+        - {x: 20.999992, y: 0.99999994}
+        - {x: 49.999992, y: 3.9999998}
+        - {x: 102.99999, y: 10}
+        - {x: 101.99999, y: -0.99999994}
+        - {x: 109.999985, y: -3.9999998}
+        - {x: 112.999985, y: 0}
+        - {x: 118.99999, y: 10.999999}
+        - {x: 127.999985, y: 13.999999}
+        - {x: 127.999985, y: 22.999998}
+        - {x: 125.999985, y: 24}
+        - {x: 98.99999, y: 24}
+        - {x: 63.99999, y: 20}
+        - {x: 25.999992, y: 15.999999}
+        - {x: -104.00001, y: 1.9999999}
+        - {x: -128, y: 0}
+        - {x: -128, y: -7.9999995}
+        - {x: -126, y: -9}
+        - {x: -119.00001, y: -12}
+        - {x: -114.00001, y: -12}
+        - {x: -114.00001, y: -22.999998}
+        - {x: -113, y: -24}
+        - {x: -105, y: -24}
+        - {x: -102.00001, y: -20}
+        - {x: -100.00001, y: -15.999999}
+        - {x: -100.00001, y: -10.999999}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37be2bac3a16467598eaa4dc81ec4280
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shop__0001_Bar-Shelf-L2-(Empty): 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: 780eb55e27235e14c8f9f88f13a48eb0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Coffee_shoop_Bottles
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Coffee_shoop_Bottles
+      rect:
+        serializedVersion: 2
+        x: 43.03875
+        y: 50.076122
+        width: 173.89914
+        height: 144.84775
+      alignment: 9
+      pivot: {x: 0.48856625, y: 0.5379709}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -83.98832, y: -72.5}
+        - {x: -86.98832, y: -71.5}
+        - {x: -86.98832, y: 72.5}
+        - {x: 85.01168, y: 72.5}
+        - {x: 87.01168, y: 64.5}
+        - {x: 87.01168, y: -72.5}
+      physicsShape:
+      - - {x: -54.988316, y: 38.5}
+        - {x: -54.988316, y: 54.499996}
+        - {x: -55.988316, y: 57.5}
+        - {x: -73.98832, y: 57.5}
+        - {x: -78.98832, y: 21.5}
+        - {x: -85.98832, y: 5.5}
+        - {x: -85.98832, y: -67.49999}
+        - {x: -80.98832, y: -71.5}
+        - {x: -49.98832, y: -71.5}
+        - {x: -42.98832, y: -67.49999}
+        - {x: -42.98832, y: 6.5}
+      - - {x: -8.988319, y: 60.5}
+        - {x: -13.988319, y: 61.5}
+        - {x: -28.988317, y: 61.5}
+        - {x: -29.98832, y: 58.499996}
+        - {x: -42.98832, y: 10.5}
+        - {x: -42.98832, y: -64.5}
+        - {x: -39.98832, y: -66.5}
+        - {x: -3.9883194, y: -66.5}
+        - {x: 0.011680603, y: -61.499992}
+        - {x: 0.011680603, y: 12.5}
+      - - {x: 77.01168, y: 34.5}
+        - {x: 74.01168, y: 68.5}
+        - {x: 70.01168, y: 70.5}
+        - {x: 57.011677, y: 70.5}
+        - {x: 55.01168, y: 68.5}
+        - {x: 49.01168, y: 35.5}
+        - {x: 37.01168, y: 30.5}
+        - {x: 35.01168, y: 62.5}
+        - {x: 14.011681, y: 67.5}
+        - {x: 11.011681, y: 42.5}
+        - {x: 1.0116806, y: 11.5}
+        - {x: 1.0116806, y: -64.5}
+        - {x: 51.011677, y: -64.5}
+        - {x: 80.01168, y: -57.5}
+        - {x: 85.01168, y: -53.499996}
+        - {x: 85.01168, y: 20.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0861c69e2861459abe1c46cc51c2fac2
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Coffee_shoop_Bottles: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

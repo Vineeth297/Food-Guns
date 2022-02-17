@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerHandAnimator_BIG
+  m_Controller: {fileID: 9100000, guid: cc1aea0b2c897b64e813d20a7fe5ed8a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ee6f95193b207054ba4cca8979a2e313, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3a9c1fc1afd9b594c907107e87e03b54, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0d45bf7fc24ee90419da2c58f894790a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6f1e18631c2c92745b4fa9fb8cc3f4ba, type: 2}

@@ -109,7 +109,7 @@ public class Collectible : MonoBehaviour
 			else
 				gameObject.SetActive(false);
 		}
-			
+
 		if (other.tag != tag) return;
 		if(!other.GetComponent<Collectible>()._isPickedUp)
 			PickUpScaleAnim(other.gameObject);

@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 3e2ced9565bc81843b45347365eff430
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: lost it button
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 4
+  maxTextureSize: 308
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lost it button
+      rect:
+        serializedVersion: 2
+        x: 12.07612
+        y: 7.0761204
+        width: 283.84778
+        height: 125.847755
+      alignment: 9
+      pivot: {x: 0.49999994, y: 0.49205393}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -136.00002, y: -47.999996}
+        - {x: -142.00002, y: -29.999996}
+        - {x: -142.00002, y: 29.000006}
+        - {x: -139.00002, y: 44.000004}
+        - {x: -114.000015, y: 63.000004}
+        - {x: 106.99999, y: 63.000004}
+        - {x: 120.999985, y: 58}
+        - {x: 133.99998, y: 47.000004}
+        - {x: 141.99998, y: 33.000004}
+        - {x: 141.99998, y: -33.999996}
+        - {x: 140.99998, y: -44.999996}
+        - {x: 113.999985, y: -62.999996}
+        - {x: -113.000015, y: -62.999996}
+      physicsShape:
+      - - {x: 141.99998, y: 26.000002}
+        - {x: 137.99998, y: 41.000004}
+        - {x: 119.99998, y: 59}
+        - {x: 101.999985, y: 63.000004}
+        - {x: -107.00001, y: 63.000004}
+        - {x: -127.000015, y: 54.000004}
+        - {x: -137.00002, y: 40.000004}
+        - {x: -142.00002, y: 27.000004}
+        - {x: -142.00002, y: -25.999996}
+        - {x: -138.00002, y: -40.999992}
+        - {x: -120.00001, y: -58.999996}
+        - {x: -105.00001, y: -61.999996}
+        - {x: -99.00001, y: -62.999996}
+        - {x: 99.999985, y: -62.999996}
+        - {x: 112.999985, y: -60.999992}
+        - {x: 125.999985, y: -53.999992}
+        - {x: 141.99998, y: -33.999996}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01145f87bfd14a8785ed5e9efc53080c
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      lost it button: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

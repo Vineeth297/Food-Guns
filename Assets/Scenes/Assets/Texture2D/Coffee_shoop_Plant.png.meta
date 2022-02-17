@@ -1,0 +1,294 @@
+fileFormatVersion: 2
+guid: d47484711b7034e4587518d67d8cc5d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Coffee_shoop_Plant
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 4
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 36.056335
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Coffee_shoop_Plant
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 234
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -95, y: -2.0000076}
+        - {x: -117, y: 51.99999}
+        - {x: -117, y: 118.99999}
+        - {x: -72, y: 127.99999}
+        - {x: 117, y: 127.99999}
+        - {x: 117, y: 83.99999}
+        - {x: 32, y: -122.00001}
+        - {x: 28, y: -128}
+        - {x: -37, y: -128}
+      physicsShape:
+      - - {x: 35, y: -66.00001}
+        - {x: 30, y: -60.000008}
+        - {x: 22.999998, y: -58.000008}
+        - {x: 9, y: -56.000008}
+        - {x: 9.999999, y: -48.000008}
+        - {x: 17, y: -40.000004}
+        - {x: 33, y: -24.000008}
+        - {x: 34, y: -19.000008}
+        - {x: 37, y: -6.0000076}
+        - {x: 47, y: 14.999992}
+        - {x: 69, y: 40.99999}
+        - {x: 69, y: 42.999992}
+        - {x: 66, y: 44.999992}
+        - {x: 55, y: 37.999992}
+        - {x: 47, y: 29.999992}
+        - {x: 56.999996, y: 57.999992}
+        - {x: 72, y: 75.99999}
+        - {x: 108, y: 84.99999}
+        - {x: 113.99999, y: 86.999985}
+        - {x: 116, y: 95.99999}
+        - {x: 116, y: 108.999985}
+        - {x: 115, y: 109.99999}
+        - {x: 108, y: 110.99999}
+        - {x: 91.99999, y: 107.99999}
+        - {x: 66, y: 93.99999}
+        - {x: 45, y: 73.99999}
+        - {x: 33, y: 57.999992}
+        - {x: 28, y: 67.99999}
+        - {x: 19, y: 80.99999}
+        - {x: 1, y: 90.99999}
+        - {x: -11, y: 91.999985}
+        - {x: 4.9999995, y: 119.99999}
+        - {x: 3, y: 127.99999}
+        - {x: -3, y: 127.99999}
+        - {x: -8, y: 125.999985}
+        - {x: -24, y: 118.999985}
+        - {x: -35, y: 109.99999}
+        - {x: -43, y: 97.99999}
+        - {x: -50, y: 80.99999}
+        - {x: -51.999996, y: 61.99999}
+        - {x: -53, y: 55.999992}
+        - {x: -58, y: 63.999992}
+        - {x: -77, y: 79.999985}
+        - {x: -88, y: 87.99999}
+        - {x: -103, y: 94.99999}
+        - {x: -115, y: 97.99999}
+        - {x: -116, y: 94.99999}
+        - {x: -116, y: 92.99999}
+        - {x: -81.99999, y: 59.999992}
+        - {x: -96.99999, y: 59.999992}
+        - {x: -108, y: 51.99999}
+        - {x: -106.99999, y: 36.999992}
+        - {x: -72, y: 44.999992}
+        - {x: -53, y: 22.99999}
+        - {x: -61, y: 22.99999}
+        - {x: -62.999996, y: 20.999992}
+        - {x: -62.999996, y: 18.999992}
+        - {x: -51.999996, y: 7.9999924}
+        - {x: -68, y: 11.999992}
+        - {x: -81, y: 13.999992}
+        - {x: -83, y: 11.999992}
+        - {x: -83, y: 7.9999924}
+        - {x: -40.999996, y: -15.000008}
+        - {x: -36, y: -16.000008}
+        - {x: -16, y: -38.000008}
+        - {x: -12.999999, y: -56.000008}
+        - {x: -30.999998, y: -59.000008}
+        - {x: -38, y: -65.00001}
+        - {x: -36, y: -102}
+        - {x: -30.999998, y: -123.00001}
+        - {x: -22, y: -128}
+        - {x: 17, y: -128}
+        - {x: 25, y: -125.00001}
+        - {x: 29, y: -112.00001}
+        - {x: 33, y: -95.00001}
+      - - {x: 9.999999, y: -20.000006}
+        - {x: 8, y: -17.000008}
+        - {x: 4.9999995, y: -16.000008}
+        - {x: -8, y: -16.000008}
+        - {x: -12.999999, y: -20.000006}
+        - {x: -12, y: -20.000006}
+        - {x: -12, y: 8.999992}
+        - {x: -15, y: 11.999992}
+        - {x: -17, y: 11.999992}
+        - {x: -18, y: 10.999992}
+        - {x: -19, y: 11.999992}
+        - {x: -19, y: 21.999992}
+        - {x: -18, y: 22.99999}
+        - {x: -16, y: 30.99999}
+        - {x: -8, y: 38.999992}
+        - {x: -7, y: 42.999992}
+        - {x: -9.999999, y: 45.99999}
+        - {x: -11, y: 45.99999}
+        - {x: -14, y: 44.999992}
+        - {x: -22.999998, y: 35.999992}
+        - {x: -25.999998, y: 26.999992}
+        - {x: -25, y: 31.999992}
+        - {x: -25.999998, y: 32.999992}
+        - {x: -25.999998, y: 40.99999}
+        - {x: -27, y: 41.999992}
+        - {x: -27, y: 43.999992}
+        - {x: -22.999998, y: 50.99999}
+        - {x: -21, y: 53.999992}
+        - {x: -21, y: 54.999992}
+        - {x: -18, y: 57.999992}
+        - {x: -18, y: 58.999992}
+        - {x: -14, y: 62.99999}
+        - {x: -9.999999, y: 59.999992}
+        - {x: -9, y: 59.999992}
+        - {x: -7, y: 57.999992}
+        - {x: -6, y: 57.999992}
+        - {x: -4.9999995, y: 55.999992}
+        - {x: -1, y: 53.999992}
+        - {x: 6, y: 46.999992}
+        - {x: 11, y: 37.999992}
+        - {x: 9.999999, y: 36.999992}
+        - {x: 9.999999, y: 19.99999}
+        - {x: 11, y: 18.999992}
+        - {x: 11, y: 11.999992}
+        - {x: 12, y: 10.999992}
+        - {x: 12, y: 4.999992}
+        - {x: 12.999999, y: 3.9999924}
+        - {x: 12.999999, y: -2.0000076}
+        - {x: 14, y: -3.0000076}
+        - {x: 14, y: -4.0000076}
+        - {x: 9, y: 1.9999924}
+        - {x: 8, y: 1.9999924}
+        - {x: 2, y: 7.9999924}
+        - {x: 1, y: 7.9999924}
+        - {x: -7, y: 15.999992}
+        - {x: -16, y: 19.99999}
+        - {x: -19, y: 16.999992}
+        - {x: -19, y: 15.999992}
+        - {x: -12, y: 8.999992}
+        - {x: -11, y: 8.999992}
+        - {x: 4.9999995, y: -7.0000076}
+        - {x: 4.9999995, y: -8.000008}
+        - {x: 9, y: -13.000007}
+        - {x: 9.999999, y: -16.000008}
+        - {x: 12, y: -17.000008}
+        - {x: 12, y: -21.000008}
+        - {x: 11, y: -22.000008}
+        - {x: 9.999999, y: -29.000008}
+        - {x: 8, y: -31.000006}
+        - {x: 9, y: -32.000008}
+        - {x: 9.999999, y: -31.000006}
+      - - {x: -9, y: 67.99999}
+        - {x: -9, y: 66.99999}
+        - {x: -2, y: 70.99999}
+        - {x: 0, y: 70.99999}
+        - {x: 1, y: 71.99999}
+        - {x: 0, y: 71.99999}
+        - {x: 3, y: 68.99999}
+        - {x: 3, y: 67.99999}
+        - {x: 8, y: 61.99999}
+        - {x: 4.9999995, y: 63.999992}
+      - - {x: -15, y: 84.99999}
+        - {x: -4.9999995, y: 77.99999}
+        - {x: -16, y: 72.99999}
+        - {x: -19, y: 70.99999}
+        - {x: -24, y: 65.99999}
+        - {x: -22.999998, y: 64.99999}
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf27c8229fda4aab8e2b17b0535c47f5
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Coffee_shoop_Plant: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: fcae676f84474d54cba039963e28f13b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Coffee_shoop_Kahve_kutusu
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Coffee_shoop_Kahve_kutusu
+      rect:
+        serializedVersion: 2
+        x: 32.026752
+        y: 76.07612
+        width: 197.89713
+        height: 103.86976
+      alignment: 9
+      pivot: {x: 0.48496535, y: 0.4998941}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82.97531, y: -52.010998}
+        - {x: -98.97531, y: -47.010998}
+        - {x: -98.97531, y: 12.989002}
+        - {x: -87.97531, y: 38.989002}
+        - {x: 62.02469, y: 51.989002}
+        - {x: 97.02469, y: 51.989002}
+        - {x: 99.02469, y: 36.989002}
+        - {x: 99.02469, y: -33.010998}
+        - {x: 96.02469, y: -33.010998}
+        - {x: -45.97531, y: -52.010998}
+      physicsShape:
+      - - {x: 21.024689, y: -39.010998}
+        - {x: 36.02469, y: -39.010998}
+        - {x: 62.02469, y: -35.010998}
+        - {x: 73.02469, y: -36.010998}
+        - {x: 93.02469, y: -31.010998}
+        - {x: 98.02469, y: -29.010998}
+        - {x: 98.02469, y: 12.989002}
+        - {x: 96.02468, y: 23.989002}
+        - {x: 87.02469, y: 47.989002}
+        - {x: 86.02469, y: 49.989002}
+        - {x: 72.02469, y: 49.989002}
+        - {x: 56.024685, y: 47.989002}
+        - {x: 53.02469, y: 39.989}
+        - {x: 51.024685, y: 47.989002}
+        - {x: 41.02469, y: 46.989002}
+        - {x: 21.024689, y: 41.989002}
+        - {x: 14.024689, y: 42.989}
+        - {x: -14.975311, y: 38.989002}
+        - {x: -17.975311, y: 32.989002}
+        - {x: -19.975311, y: 39.989}
+        - {x: -30.975311, y: 38.989002}
+        - {x: -45.975307, y: 34.989002}
+        - {x: -50.97531, y: 32.989002}
+        - {x: -52.97531, y: 26.989}
+        - {x: -52.97531, y: 24.989002}
+        - {x: -54.97531, y: 32.989002}
+        - {x: -55.975307, y: 35.989002}
+        - {x: -72.97531, y: 33.989002}
+        - {x: -82.9753, y: 30.989002}
+        - {x: -87.97531, y: 28.989002}
+        - {x: -97.97531, y: -0.010997772}
+        - {x: -97.97531, y: -44.010998}
+        - {x: -92.97531, y: -46.010994}
+        - {x: -74.97531, y: -51.010998}
+        - {x: -71.97531, y: -51.010998}
+        - {x: -51.975307, y: -47.010998}
+        - {x: -36.97531, y: -47.010998}
+        - {x: -25.97531, y: -45.010998}
+        - {x: 0.02468872, y: -43.010994}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f42f75ce5f41dfbe5915c97e446918
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Coffee_shoop_Kahve_kutusu: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

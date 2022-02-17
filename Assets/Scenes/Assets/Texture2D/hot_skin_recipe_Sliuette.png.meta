@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 72dc28c272f19fc4ebc5c739bf66b418
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: hot_skin_recipe_Sliuette
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 512
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hot_skin_recipe_Sliuette
+      rect:
+        serializedVersion: 2
+        x: 29.07612
+        y: 104.07612
+        width: 453.88098
+        height: 303.84778
+      alignment: 9
+      pivot: {x: 0.4999634, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.016617, y: -111}
+        - {x: -36.016617, y: -122}
+        - {x: -57.016617, y: -152}
+        - {x: -168.01662, y: -152}
+        - {x: -183.01662, y: -123}
+        - {x: -192.01662, y: 2}
+        - {x: -227.01662, y: 64}
+        - {x: -227.01662, y: 104.99999}
+        - {x: -212.0166, y: 141}
+        - {x: -158.01662, y: 144}
+        - {x: -95.01662, y: 104}
+        - {x: -91.01662, y: 112}
+        - {x: -62.016617, y: 152}
+        - {x: -44.016617, y: 152}
+        - {x: 2.9833832, y: 127}
+        - {x: 22.983383, y: 98}
+        - {x: 95.98338, y: 104.99999}
+        - {x: 147.98338, y: 93}
+        - {x: 188.98338, y: 141}
+        - {x: 194.98338, y: 152}
+        - {x: 197.98338, y: 152}
+        - {x: 204.98338, y: 148}
+        - {x: 206.98338, y: 96}
+        - {x: 217.98338, y: 115}
+        - {x: 226.98338, y: 121}
+        - {x: 226.98338, y: 69}
+        - {x: 212.9834, y: 15.000001}
+        - {x: 177.98338, y: -33}
+        - {x: 146.98338, y: -44}
+        - {x: 138.98338, y: -104}
+        - {x: 140.98338, y: -119.00001}
+        - {x: 121.98338, y: -149}
+        - {x: 113.98338, y: -152}
+        - {x: 32.983383, y: -152}
+        - {x: 21.983383, y: -151}
+        - {x: 2.9833832, y: -119.00001}
+        - {x: -27.016619, y: -36}
+      physicsShape:
+      - - {x: -53.016613, y: -116.99999}
+        - {x: -54.016613, y: -109}
+        - {x: -45.016617, y: -38}
+        - {x: -40.016613, y: 1}
+        - {x: -29.016617, y: -4}
+        - {x: -41.016617, y: -8}
+        - {x: -36.016617, y: -19}
+        - {x: -12.016617, y: -25}
+        - {x: -21.016617, y: -29}
+        - {x: -17.016617, y: -37}
+        - {x: 4.9833827, y: -44}
+        - {x: 7.983383, y: -48.999996}
+        - {x: 13.983383, y: -97}
+        - {x: 9.983382, y: -107.99999}
+        - {x: 7.983383, y: -117.99999}
+        - {x: 20.983383, y: -141}
+        - {x: 25.983383, y: -146.99998}
+        - {x: 53.98338, y: -151}
+        - {x: 96.98338, y: -151}
+        - {x: 119.983376, y: -146.99998}
+        - {x: 127.98338, y: -137}
+        - {x: 137.98338, y: -119.99999}
+        - {x: 135.98338, y: -103}
+        - {x: 131.98338, y: -104.99999}
+        - {x: 135.98338, y: -68}
+        - {x: 139.98338, y: -39.999996}
+        - {x: 144.98338, y: -35}
+        - {x: 161.98338, y: -35}
+        - {x: 166.98338, y: -26}
+        - {x: 159.98337, y: -19.999998}
+        - {x: 173.98338, y: -19.999998}
+        - {x: 186.98338, y: -9.999999}
+        - {x: 182.98338, y: -3}
+        - {x: 171.98337, y: -4}
+        - {x: 182.98338, y: 1}
+        - {x: 191.98338, y: 6}
+        - {x: 201.98338, y: 17}
+        - {x: 202.98338, y: 24}
+        - {x: 201.98338, y: 26.999998}
+        - {x: 196.98337, y: 26.999998}
+        - {x: 207.98338, y: 37}
+        - {x: 216.98337, y: 50}
+        - {x: 217.98338, y: 65}
+        - {x: 224.98338, y: 85.99999}
+        - {x: 225.98338, y: 102}
+        - {x: 225.98338, y: 112}
+        - {x: 223.98338, y: 115}
+        - {x: 217.98338, y: 113}
+        - {x: 204.98338, y: 90}
+        - {x: 185.98338, y: 72}
+        - {x: 195.98337, y: 85}
+        - {x: 200.98338, y: 110}
+        - {x: 201.98338, y: 129}
+        - {x: 200.98338, y: 146.99998}
+        - {x: 194.98338, y: 149}
+        - {x: 192.98338, y: 145.99998}
+        - {x: 185.98338, y: 126}
+        - {x: 173.98338, y: 98.99999}
+        - {x: 147.98338, y: 70}
+        - {x: 148.98338, y: 84}
+        - {x: 137.98338, y: 91.99999}
+        - {x: 103.98338, y: 97.99999}
+        - {x: 56.983383, y: 98.99999}
+        - {x: 19.983381, y: 95}
+        - {x: 8.983383, y: 91}
+        - {x: 2.9833832, y: 88}
+        - {x: 1.9833832, y: 96}
+        - {x: -0.016616821, y: 107.99999}
+        - {x: -5.0166163, y: 118.99999}
+        - {x: -17.016617, y: 132}
+        - {x: -31.016617, y: 138}
+        - {x: -44.016617, y: 148}
+        - {x: -46.016613, y: 150}
+        - {x: -52.016617, y: 150}
+        - {x: -54.016613, y: 138}
+        - {x: -72.01662, y: 127}
+        - {x: -77.01662, y: 124}
+        - {x: -88.01662, y: 114}
+        - {x: -94.01662, y: 103}
+        - {x: -95.01662, y: 97.99999}
+        - {x: -129.01662, y: 97.99999}
+        - {x: -128.01662, y: 102}
+        - {x: -134.0166, y: 112}
+        - {x: -148.01662, y: 125}
+        - {x: -160.0166, y: 133}
+        - {x: -177.01662, y: 137}
+        - {x: -193.01662, y: 138}
+        - {x: -207.01662, y: 131}
+        - {x: -217.0166, y: 120.99999}
+        - {x: -224.01662, y: 105.99999}
+        - {x: -225.01662, y: 103}
+        - {x: -225.01662, y: 78}
+        - {x: -217.0166, y: 64}
+        - {x: -207.01662, y: 55}
+        - {x: -198.0166, y: 52}
+        - {x: -195.01662, y: 41}
+        - {x: -187.01662, y: 31}
+        - {x: -185.0166, y: 7}
+        - {x: -179.01662, y: -41}
+        - {x: -173.01662, y: -79.99999}
+        - {x: -168.01662, y: -122}
+        - {x: -172.0166, y: -119.99999}
+        - {x: -175.01662, y: -122}
+        - {x: -169.01662, y: -133.99998}
+        - {x: -165.01662, y: -141}
+        - {x: -155.01662, y: -148}
+        - {x: -145.01662, y: -150}
+        - {x: -126.01662, y: -151}
+        - {x: -87.01662, y: -151}
+        - {x: -65.01662, y: -146.99998}
+        - {x: -52.016617, y: -130}
+        - {x: -48.016617, y: -119.99999}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991dc888b8354998b97cf02986b6ccd0
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      hot_skin_recipe_Sliuette: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

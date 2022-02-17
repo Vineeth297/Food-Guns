@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 22e394cd00bd12e4e9aeefbfc8f18806
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Hand_Hulk_outline
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 256
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hand_Hulk_outline
+      rect:
+        serializedVersion: 2
+        x: 41.076122
+        y: 14.07612
+        width: 133.84775
+        height: 227.89713
+      alignment: 9
+      pivot: {x: 0.6494235, y: 0.4998917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.999996, y: -90.02468}
+        - {x: -67, y: -6.024681}
+        - {x: -67, y: 65.97532}
+        - {x: -38.999996, y: 109.97532}
+        - {x: -31, y: 113.97532}
+        - {x: 38, y: 113.97532}
+        - {x: 67, y: 72.97532}
+        - {x: 67, y: -103.02468}
+        - {x: 41, y: -114.02468}
+        - {x: -17, y: -114.02468}
+      physicsShape:
+      - - {x: 64, y: -63.02468}
+        - {x: 59, y: -42.02468}
+        - {x: 66, y: 0.9753189}
+        - {x: 66, y: 33.97532}
+        - {x: 65, y: 46.97532}
+        - {x: 59, y: 69.97532}
+        - {x: 46, y: 88.97532}
+        - {x: 24, y: 105.97531}
+        - {x: 16, y: 112.97532}
+        - {x: -4, y: 112.97532}
+        - {x: -16, y: 111.97532}
+        - {x: -24, y: 101.97532}
+        - {x: -22.999996, y: 61.97532}
+        - {x: -22, y: 39.975315}
+        - {x: -25.999996, y: 33.97532}
+        - {x: -32, y: 51.97532}
+        - {x: -46, y: 60.97532}
+        - {x: -57, y: 59.975315}
+        - {x: -64, y: 53.975315}
+        - {x: -65.99999, y: 47.97532}
+        - {x: -65.99999, y: 41.97532}
+        - {x: -61, y: 20.975319}
+        - {x: -56, y: 10.975319}
+        - {x: -46, y: -4.024681}
+        - {x: -31, y: -21.024681}
+        - {x: -25, y: -35.02468}
+        - {x: -31, y: -68.02468}
+        - {x: -30, y: -90.02468}
+        - {x: -28, y: -95.02468}
+        - {x: -8, y: -109.02468}
+        - {x: 5.000001, y: -112.02468}
+        - {x: 34, y: -112.02468}
+        - {x: 49, y: -107.02467}
+        - {x: 59.999996, y: -94.02468}
+        - {x: 64, y: -76.02468}
+      - - {x: 8, y: -103.02468}
+        - {x: 7, y: -102.02468}
+        - {x: 4, y: -101.02468}
+        - {x: -4, y: -99.02467}
+        - {x: -6.999998, y: -97.02468}
+        - {x: -9, y: -97.02468}
+        - {x: -15, y: -93.02468}
+        - {x: -16, y: -93.02468}
+        - {x: -19.999996, y: -89.02468}
+        - {x: -19.999996, y: -87.02468}
+        - {x: -22, y: -83.02468}
+        - {x: -22, y: -71.02468}
+        - {x: -21, y: -70.02468}
+        - {x: -19.999996, y: -62.02468}
+        - {x: -14, y: -53.024677}
+        - {x: -14, y: -50.02468}
+        - {x: -15, y: -49.024677}
+        - {x: -15, y: -42.02468}
+        - {x: -16, y: -41.02468}
+        - {x: -16, y: -31.024681}
+        - {x: -17, y: -27.02468}
+        - {x: -19, y: -21.024681}
+        - {x: -22, y: -16.024681}
+        - {x: -38, y: 0.9753189}
+        - {x: -38.999996, y: 3.975319}
+        - {x: -41, y: 5.975319}
+        - {x: -45, y: 12.975319}
+        - {x: -48, y: 15.975319}
+        - {x: -50, y: 20.975319}
+        - {x: -54, y: 27.975319}
+        - {x: -54, y: 31.975319}
+        - {x: -55, y: 32.97532}
+        - {x: -56, y: 41.97532}
+        - {x: -57, y: 42.975315}
+        - {x: -57, y: 47.97532}
+        - {x: -54, y: 50.97532}
+        - {x: -49, y: 50.97532}
+        - {x: -48, y: 49.97532}
+        - {x: -46, y: 49.97532}
+        - {x: -42, y: 45.975315}
+        - {x: -41, y: 42.975315}
+        - {x: -35, y: 30.975319}
+        - {x: -30, y: 24.975319}
+        - {x: -27, y: 23.975319}
+        - {x: -19.999996, y: 23.975319}
+        - {x: -18, y: 22.975317}
+        - {x: -15, y: 25.975319}
+        - {x: -14, y: 28.975319}
+        - {x: -14, y: 36.97532}
+        - {x: -13, y: 37.97532}
+        - {x: -12, y: 42.975315}
+        - {x: -12, y: 59.975315}
+        - {x: -13, y: 60.97532}
+        - {x: -13, y: 79.97531}
+        - {x: -14, y: 80.97532}
+        - {x: -14, y: 97.97531}
+        - {x: -13, y: 98.97531}
+        - {x: -13, y: 101.97532}
+        - {x: -12, y: 102.97532}
+        - {x: -6, y: 102.97532}
+        - {x: 0.0000019073486, y: 96.97532}
+        - {x: 1, y: 96.97532}
+        - {x: 4, y: 99.97532}
+        - {x: 5.000001, y: 103.97532}
+        - {x: 12, y: 103.97532}
+        - {x: 14, y: 101.97532}
+        - {x: 18, y: 94.97532}
+        - {x: 18, y: 92.97532}
+        - {x: 22, y: 88.97532}
+        - {x: 24, y: 89.97532}
+        - {x: 29, y: 89.97532}
+        - {x: 34, y: 86.97532}
+        - {x: 37, y: 83.97532}
+        - {x: 39, y: 78.97532}
+        - {x: 44, y: 74.97532}
+        - {x: 44, y: 73.97532}
+        - {x: 50, y: 65.97532}
+        - {x: 51, y: 61.97532}
+        - {x: 53, y: 58.975315}
+        - {x: 53, y: 55.97532}
+        - {x: 54, y: 54.97532}
+        - {x: 54, y: 49.97532}
+        - {x: 55, y: 48.975315}
+        - {x: 55, y: 42.975315}
+        - {x: 56, y: 41.97532}
+        - {x: 56, y: 35.97532}
+        - {x: 57, y: 34.97532}
+        - {x: 58, y: 10.975319}
+        - {x: 57, y: 9.975318}
+        - {x: 57, y: 1.9753189}
+        - {x: 56, y: 0.9753189}
+        - {x: 56, y: -4.024681}
+        - {x: 55, y: -5.0246806}
+        - {x: 54, y: -12.024681}
+        - {x: 53, y: -13.024681}
+        - {x: 52, y: -19.024681}
+        - {x: 51, y: -20.02468}
+        - {x: 50, y: -24.024681}
+        - {x: 49, y: -46.024677}
+        - {x: 50, y: -47.02468}
+        - {x: 50, y: -55.02468}
+        - {x: 52, y: -61.02468}
+        - {x: 54, y: -64.02468}
+        - {x: 54, y: -78.02468}
+        - {x: 53, y: -79.02468}
+        - {x: 52, y: -84.02468}
+        - {x: 51, y: -90.02468}
+        - {x: 49, y: -92.02467}
+        - {x: 49, y: -93.02468}
+        - {x: 43, y: -98.02467}
+        - {x: 34, y: -103.02468}
+        - {x: 28, y: -103.02468}
+        - {x: 27, y: -104.02468}
+        - {x: 17, y: -104.02468}
+        - {x: 16, y: -103.02468}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692141834c734845bf74729adee5299e
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hand_Hulk_outline: 21300000
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
