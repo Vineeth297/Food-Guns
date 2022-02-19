@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class HandGunController : MonoBehaviour
@@ -20,6 +21,8 @@ public class HandGunController : MonoBehaviour
 
 	public int totalLeftCollectibles;
 	public int totalRightCollectibles;
+
+	public int myCollectibles;
 
 	private static int _totalAmmo;
 
@@ -50,6 +53,11 @@ public class HandGunController : MonoBehaviour
 	private float _fireSpeed = 0.3f;
 	private float _nextFire = 0.0f;
 	
+	[SerializeField] private TMP_Text comboText;
+	[SerializeField] private ComboText comboComponent;
+	
+	private float _initFontSize;
+	
 	private void OnEnable()
 	{
 		GameEvents.Ge.aimModeSwitch += AdiosCollider;
@@ -70,29 +78,30 @@ public class HandGunController : MonoBehaviour
 		handAnimator = GetComponent<Animator>();
 		
 		_aimModeSwitch = FindObjectOfType<AimModeSwitch>();
+		
+		comboText.enabled = false;
+		_initFontSize = comboText.fontSize;
 
 	}
 
 	private void Update()
 	{
-		// if (_aimModeSwitch.canShoot)
-		// {
-		// 	if (Input.GetMouseButtonDown(0))
-		// 	{
-		// 		if(isLeftHand)
-		// 			OnStartShooting(leftHandController,leftMuzzle);
-		// 		else 
-		// 			OnStartShooting(rightHandController,rightMuzzle);
-		// 	}
-		// }
-	
 		if (Input.GetKey(KeyCode.Space) && Time.time > _nextFire)
 		{
 			_nextFire = Time.time + _fireSpeed;
-			if(isLeftHand)
+
+			if (isLeftHand)
+			{
 				OnStartShooting(leftHandController,leftMuzzle);
-			else 
+				if(GameManager.Singleton.myLeftCollectibles >= 1)
+					GameManager.Singleton.myLeftCollectibles--;
+			}
+			else
+			{
 				OnStartShooting(rightHandController,rightMuzzle);
+				if(GameManager.Singleton.myRightCollectibles >= 1)
+					GameManager.Singleton.myRightCollectibles--;
+			}
 		}
 	}
 
@@ -102,16 +111,22 @@ public class HandGunController : MonoBehaviour
 		{
 			GameEvents.Ge.InvokeOnAmmoFound(leftHandController, other.gameObject, leftMagPos);
 			OnAmmoFound(leftHandController, other.gameObject, leftMagPos);
+			leftHandController.comboComponent.ComboSelling(comboText,_initFontSize);
 			totalLeftCollectibles++;
 			_totalAmmo++;
+			GameManager.Singleton.myLeftCollectibles++;
+			myCollectibles++;
 		}
 	
 		if (other.CompareTag("Liquids"))
 		{
 			GameEvents.Ge.InvokeOnAmmoFound(rightHandController, other.gameObject, rightMagPos);
 			OnAmmoFound(rightHandController, other.gameObject, rightMagPos);
+			rightHandController.comboComponent.ComboSelling(comboText,_initFontSize);
 			totalRightCollectibles++;
 			_totalAmmo++;
+			GameManager.Singleton.myRightCollectibles++;
+			myCollectibles++;
 		}
 	}
 
@@ -121,8 +136,7 @@ public class HandGunController : MonoBehaviour
 		SpawnGuns();
 		deActivator.SetActive(false);
 	}
-
-
+	
 	public void OnAmmoFound(HandGunController handGunController, GameObject collectible, GameObject mag)
 	{
 		if (handGunController.myAmmo.Contains(collectible)) return;
@@ -152,10 +166,12 @@ public class HandGunController : MonoBehaviour
 		//unparent the first ammo from player
 		if (handGunController.myAmmo.Count == 0) return;
 		
-		StartCoroutine(Shoot(handGunController,muzzle,handAnimator));
+		//StartCoroutine(
+			Shoot(handGunController,muzzle,handAnimator);
+				//);
 	}
 
-	IEnumerator Shoot(HandGunController handGunController, GameObject muzzle,Animator anim)
+	private void Shoot(HandGunController handGunController, GameObject muzzle,Animator anim)
 	{
 		var bullet = handGunController.myAmmo[0];
 		bullet.GetComponent<Collectible>().ammoToFollow = bullet.transform;
@@ -178,10 +194,8 @@ public class HandGunController : MonoBehaviour
 		
 		anim.SetTrigger(ToShoot);
 		
-		yield return null;
+		//yield return null;
 	}
-	
-	
 
 	private void AdiosCollider()
 	{
@@ -199,12 +213,10 @@ public class HandGunController : MonoBehaviour
 		leftGun.SetActive(true);
 
 		handAnimator.SetTrigger(HoldGunHash);
-		
 	}
 
 	private void LoadingAmmoIllusion(GameObject illusionAmmo,Vector3 initPos)
 	{
-
 		if (_tweener.IsActive())
 		{
 			_tweener.Kill();

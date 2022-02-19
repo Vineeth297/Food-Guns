@@ -35,6 +35,17 @@ public class ObstacleHead : MonoBehaviour
 		{
 			animator.SetTrigger(Eat);
 			eatingParticleSystem.Play();
+
+			if (other.CompareTag("Solids"))
+			{
+				if (GameManager.Singleton.myLeftCollectibles < 1)
+					GameManager.Singleton.lostPanel.SetActive(true);
+			}
+			else if(other.CompareTag("Liquids"))
+			{
+				if(GameManager.Singleton.myRightCollectibles < 1)
+					GameManager.Singleton.lostPanel.SetActive(true);
+			}
 		}
 
 		if (other.CompareTag("Player"))
@@ -58,15 +69,9 @@ public class ObstacleHead : MonoBehaviour
 		}
 	}
 
-	public void OpenMouth()
-	{
-		animator.speed = 0;
-	}
+	public void OpenMouth() => animator.speed = 0;
 
-	private void CloseMouth()
-	{
-		animator.speed = 1;
-	}
+	private void CloseMouth() => animator.speed = 1;
 
 	private void GoUnder()
 	{

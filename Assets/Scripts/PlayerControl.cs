@@ -12,12 +12,7 @@ public class PlayerControl : MonoBehaviour
 	
 	[SerializeField] private Transform offsetOnRight, offsetOnLeft;
 
-	public List<Vector3> leftPositions;
-	public List<Vector3> rightPositions;
-	public int leftIntervalPos = 10;
-	public int rightIntervalPos = 10;
-
-	public bool walkState, canWalkAroundVineetMakeThisVariableHiddenAndProtectItWithAMethod = true;
+	public bool walkState, canWalkAround = true;
 
 	[SerializeField] private GameObject cameraFinalPosition;
 	private Camera _camera;
@@ -58,36 +53,31 @@ public class PlayerControl : MonoBehaviour
           }
 	#endif
 		
-
 		if (walkState)
 		{
 			transform.Translate((Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f)) * Time.deltaTime, Space.World);
-			leftPositions.Insert(0, offsetOnLeft.position);
-			rightPositions.Insert(0, offsetOnRight.position);
-
 		}
 		else
-		{
-			if (canWalkAroundVineetMakeThisVariableHiddenAndProtectItWithAMethod)
+		{ 
+			if (canWalkAround)
 				if(Input.GetMouseButton(0))
 				{
-					//transform.Translate(new Vector3(xForce * xSpeed, 0f, 0f) * Time.deltaTime);
 					if(xForce * xSpeed > 0)
 						transform.Rotate(Vector3.up,1f);
 					if(xForce * xSpeed < 0)
 						transform.Rotate(Vector3.up,-1f);
 				}
 		} 
+		
 		if(transform.position.x < leftBoundary)
 			transform.position = new Vector3(leftBoundary,transform.position.y,transform.position.z);
-		else if(transform.position.x > rightBoundary)
-			transform.position = new Vector3(rightBoundary,transform.position.y,transform.position.z);
-		
+		else if (transform.position.x > rightBoundary)
+			transform.position = new Vector3(rightBoundary, transform.position.y, transform.position.z);
 	}
 	
 	private void OnAimModeSwitch()
 	{
-		//transform.DOLocalMove(new Vector3(0f, transform.position.y, transform.position.z), 0.5f);
+		transform.DOLocalMove(new Vector3(0f, transform.position.y, transform.position.z), 0.5f);
 		walkState = false;
 		transform.position = new Vector3(0f,transform.position.y,transform.position.z);
 		//Camera.main.GetComponent<CameraFollow>().enabled = false;

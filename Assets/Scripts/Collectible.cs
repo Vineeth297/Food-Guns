@@ -1,8 +1,5 @@
-using System;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.PlayerLoop;
-using Random = System.Random;
 
 public class Collectible : MonoBehaviour
 {
@@ -54,13 +51,7 @@ public class Collectible : MonoBehaviour
 			handGunController = handGunController.leftHandController;
 		else
 			handGunController = handGunController.rightHandController;
-
-		/*_playerControl = FindObjectOfType<PlayerControl>();
-		if (CompareTag("Solids"))
-			_handGunController = _playerControl.leftHandGun;
-		else
-			_handGunController = _playerControl.rightHandGun;*/
-
+		
 		_initScale = transform.localScale;
 		
 		camera = Camera.main;
@@ -88,19 +79,15 @@ public class Collectible : MonoBehaviour
 		{
 			if (!_disableCameraFollow)
 			{
-				//GameEvents.Ge.InvokeStopCamera();
-
 				_disableCameraFollow = true;
-				print("Camera");	
 				_playerControl.xSpeed = 0f;
 				var playerPosition = _playerControl.gameObject.transform.position;
 				playerPosition.x = 0f;
 
-				_playerControl.canWalkAroundVineetMakeThisVariableHiddenAndProtectItWithAMethod = false;
+				_playerControl.canWalkAround = false;
 				
 				_playerControl.gameObject.transform.DOMove(playerPosition, 0.5f).OnComplete(() =>
 				{
-					//_playerControl.canWalkAroundVineetMakeThisVariableHiddenAndProtectItWithAMethod = true;
 					gameObject.SetActive(false);
 
 				}); // = playerPosition;
@@ -120,10 +107,7 @@ public class Collectible : MonoBehaviour
 	{
 		if (_playerControl.walkState) return;
 		if (startMoving) return;
-		// Vector3 smoothPos = Vector3.Lerp(transform.position, ammoToFollow.position + followOffset , Time.deltaTime * damping);
-		// transform.position = smoothPos;
-		// transform.eulerAngles = ammoToFollow.eulerAngles;
-		//print(transform.position);
+		
 		_collider.enabled = false;
 		doSnake = false;
 		followOffset.z = 0;
@@ -131,7 +115,6 @@ public class Collectible : MonoBehaviour
 	}
 	private void Shoot()
 	{
-		// transform.Translate(Vector3.forward,Space.World);
 		transform.Translate(camera.transform.forward,Space.World);
 	}
 
@@ -166,14 +149,14 @@ public class Collectible : MonoBehaviour
 			else
 				ammoToFollow = theHandGunController.myAmmo[rightAmmoIndex - 2].transform;
 		}
-		
+
 		canFilterTheList = true;
 	 }
 
 	 private void PickUpScaleAnim(GameObject pickedUpObject)
 	 {
 		 var pickUpInitScale = pickedUpObject.transform.localScale;
-		 Sequence mySequence = DOTween.Sequence();
+		 Sequence mySequence =  DOTween.Sequence();
 
 		 mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale + (pickUpInitScale * 0.2f), 0.5f).SetEase(Ease.OutElastic));
 		 mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale, 0.1f));
@@ -187,7 +170,6 @@ public class Collectible : MonoBehaviour
 			 Vector3 smoothPos = Vector3.Lerp(transform.position, ammoToFollow.position + followOffset,
 				 Time.deltaTime * damping);
 			 transform.position = smoothPos;
-			//transform.eulerAngles = ammoToFollow.eulerAngles;
 		 }
 	 }
 }

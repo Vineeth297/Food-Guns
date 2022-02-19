@@ -1,5 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
+
 public enum PartsOfDrink
 {
 	CoolDrink,
@@ -11,16 +13,24 @@ public class DrinkMaker : MonoBehaviour
 	[SerializeField] private PartsOfDrink partsOfDrink = PartsOfDrink.CoolDrink;
 	private int _childNum = 0;
 
-    // Start is called before the first frame update
-    void Start()
+	[SerializeField] private TMP_Text comboText;
+	[SerializeField] private ComboText comboComponent;
+	
+	private float _initFontSize;
+	void Start()
 	{
 		_childNum = (int) partsOfDrink;
+		
+		comboText.enabled = false;
+		_initFontSize = comboText.fontSize;
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!other.CompareTag("Liquids")) return;
 		
+		comboComponent.ComboSelling(comboText,_initFontSize);
+
 		var initScale = other.transform.localScale;
 		Sequence mySequence = DOTween.Sequence();
 

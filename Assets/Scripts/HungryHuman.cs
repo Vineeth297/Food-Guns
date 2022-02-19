@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class HungryHuman : MonoBehaviour
 {
-	[SerializeField] private Animator animator;
+	public Animator animator;
 	
 	private static readonly int OpenMouth = Animator.StringToHash("OpenMouth");
 	private static readonly int CloseMouth = Animator.StringToHash("CloseMouth");
@@ -26,5 +26,10 @@ public class HungryHuman : MonoBehaviour
 		{
 			animator.SetTrigger(OpenMouth);
 		});
+	}
+
+	public void Eat()
+	{
+		animator.SetTrigger(CloseMouth);
 	}
 }

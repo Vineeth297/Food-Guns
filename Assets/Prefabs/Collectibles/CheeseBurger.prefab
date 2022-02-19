@@ -3132,7 +3132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6080958868535982983
 Transform:
   m_ObjectHideFlags: 0
@@ -3179,7 +3179,7 @@ MonoBehaviour:
   value: 0.001
   mouth: {fileID: 0}
   force: 5
-  followOffset: {x: 0, y: 0, z: 1}
+  followOffset: {x: 0, y: 0, z: 1.25}
 --- !u!65 &6856791404000665915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3990,7 +3990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8361403841376170524}
   m_LocalRotation: {x: 7.871275e-17, y: 0.93750507, z: -7.871275e-17, w: 0.34797162}
-  m_LocalPosition: {x: 0.00053565454, y: 0.0312, z: -0.0008159562}
+  m_LocalPosition: {x: 0, y: 0.0312, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

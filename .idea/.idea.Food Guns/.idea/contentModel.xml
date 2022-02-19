@@ -4,6 +4,8 @@
     <e p="C:\Users\USER\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
     <e p="C:\Users\USER\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Food Guns.1578997306.00" t="ExcludeRecursive" />
     <e p="E:\Workspace\Food Guns" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="BOXOPHOBIC" t="Include">
@@ -107,19 +109,8 @@
             </e>
           </e>
         </e>
-        <e p="DOTween" t="Include">
-          <e p="Modules" t="Include">
-            <e p="DOTweenModuleAudio.cs" t="Include" />
-            <e p="DOTweenModuleEPOOutline.cs" t="Include" />
-            <e p="DOTweenModulePhysics.cs" t="Include" />
-            <e p="DOTweenModulePhysics2D.cs" t="Include" />
-            <e p="DOTweenModuleSprite.cs" t="Include" />
-            <e p="DOTweenModuleUI.cs" t="Include" />
-            <e p="DOTweenModuleUnityVersion.cs" t="Include" />
-            <e p="DOTweenModuleUtils.cs" t="Include" />
-          </e>
-          <e p="readme.txt" t="Include" />
-        </e>
+        <e p="ComboText.cs" t="Include" />
+        <e p="FallOffCollider.cs" t="Include" />
         <e p="JMO Assets" t="Include">
           <e p="Toony Colors Pro" t="Include">
             <e p="!ToonyColorsPro Readme.txt" t="Include" />
@@ -404,6 +395,45 @@
             </e>
           </e>
         </e>
+        <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DemiLib" t="Include">
+              <e p="Core" t="Include">
+                <e p="DemiLib.xml" t="Include" />
+                <e p="Editor" t="Include">
+                  <e p="DemiEditor.xml" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="DOTween" t="Include">
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModuleEPOOutline.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="readme.txt" t="Include" />
+            </e>
+            <e p="DOTweenPro" t="Include">
+              <e p="DOTweenAnimation.cs" t="Include" />
+              <e p="DOTweenDeAudio.cs" t="Include" />
+              <e p="DOTweenDeUnityExtended.cs" t="Include" />
+              <e p="DOTweenProShortcuts.cs" t="Include" />
+              <e p="DOTweenTextMeshPro.cs" t="Include" />
+              <e p="DOTweenTk2d.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="DOTweenAnimationInspector.cs" t="Include" />
+                <e p="DOTweenPreviewManager.cs" t="Include" />
+              </e>
+              <e p="readme.txt" t="Include" />
+            </e>
+            <e p="readme_DOTweenPro.txt" t="Include" />
+          </e>
+        </e>
         <e p="Scenes" t="Include">
           <e p="Assets" t="Include">
             <e p="Resources" t="Include">
@@ -446,12 +476,10 @@
           <e p="HandGunController.cs" t="Include" />
           <e p="HungryHuman.cs" t="Include" />
           <e p="LeftGun.cs" t="Include" />
-          <e p="LeftHandController.cs" t="Include" />
           <e p="LeftObstacleHand.cs" t="Include" />
           <e p="ObstacleHead.cs" t="Include" />
           <e p="PlayerControl.cs" t="Include" />
           <e p="RIghtGun.cs" t="Include" />
-          <e p="RIghtHandController.cs" t="Include" />
           <e p="RightObstacleHand.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
           <e p="Trial.cs" t="Include" />

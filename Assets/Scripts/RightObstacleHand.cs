@@ -12,8 +12,14 @@ public class RightObstacleHand : MonoBehaviour
 	{
 		if (other.CompareTag("Liquids"))
 		{
-			//pickup the triggered snack
-			EatMethod(other.gameObject);
+			if (GameManager.Singleton.myRightCollectibles < 1)
+				GameManager.Singleton.lostPanel.SetActive(true);
+			else
+			{
+				EatMethod(other.gameObject);
+				GameManager.Singleton.myRightCollectibles =
+					other.GetComponent<Collectible>().handGunController.myAmmo.Count;
+			}
 		}
 
 		if (other.CompareTag("Solids"))
@@ -26,10 +32,7 @@ public class RightObstacleHand : MonoBehaviour
 
 	private void EatMethod(GameObject snack)
 	{
-		
-		print(snack.name);
 		snack.GetComponent<Collectible>().ammoToFollow = snack.transform;
-
 		GetComponent<Collider>().enabled = false;
 
 		GameObject theSnack = snack;
@@ -38,8 +41,6 @@ public class RightObstacleHand : MonoBehaviour
 
 		theSnack.GetComponent<Collectible>().doSnake = false;
 		theSnack.transform.position = palmObject.transform.position;
-
-		//rightHand.myAmmo.RemoveAt(index);
 		theSnack.transform.SetParent(palmObject.transform);
 
 		if (rightHand.myAmmo.Count > index) 
@@ -54,18 +55,13 @@ public class RightObstacleHand : MonoBehaviour
 	{
 		var component = theSnack.GetComponent<Collectible>();
 		var count = rightHand.myAmmo.Count;
-		print("Out Index " + index);
+		
 		for (int i = index; i < count; i++)
 		{
 			var ammoPos = rightHand.myAmmo[index].transform.position;
-			//rightHand.myAmmo[index].transform.DOJump(new Vector3(ammoPos.x + Random.Range(0f, 1f), ammoPos.y, ammoPos.x + Random.Range(0f, 1f)), 5f, 1, 1f);
-			print("In Index " + index);
 			rightHand.myAmmo[index].GetComponent<Collectible>().enabled = false;
-			//rightHand.myAmmo[index].GetComponent<Rigidbody>().isKinematic = false;
-			// rightHand.myAmmo.RemoveAt(index);
 			var obj = rightHand.myAmmo[index];
 			rightHand.myAmmo.RemoveAt(index);
-			//obj.transform.DOJump(new Vector3(ammoPos.x + Random.Range(0f, 1f), ammoPos.y, ammoPos.x + Random.Range(0f, 1f)), 1f, 1, 1f);
 		}
 	}
 }

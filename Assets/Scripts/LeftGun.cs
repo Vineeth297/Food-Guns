@@ -13,10 +13,6 @@ public class LeftGun : MonoBehaviour
 		mySequence.Append(transform.DOScale(_initScale + (_initScale * 0.2f), 0.3f).SetEase(Ease.OutElastic));
 		mySequence.Append(transform.DOScale(_initScale ,0.1f));
 	}
-	
-	private void Start()
-	{
-	}
 
 	public void PickUpReaction()
 	{
