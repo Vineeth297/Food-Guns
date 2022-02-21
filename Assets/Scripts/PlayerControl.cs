@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,7 +16,7 @@ public class PlayerControl : MonoBehaviour
 	[SerializeField] private GameObject cameraFinalPosition;
 	private Camera _camera;
 	
-	private float _swipeSpeed = 15f;
+	private float _swipeSpeed = 3f;
 	private void OnEnable()
 	{
 		GameEvents.Ge.aimModeSwitch += OnAimModeSwitch;
@@ -57,7 +56,7 @@ public class PlayerControl : MonoBehaviour
 		{
 			transform.Translate((Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f)) * Time.deltaTime, Space.World);
 		}
-		else
+		/*else
 		{ 
 			if (canWalkAround)
 				if(Input.GetMouseButton(0))
@@ -67,7 +66,8 @@ public class PlayerControl : MonoBehaviour
 					if(xForce * xSpeed < 0)
 						transform.Rotate(Vector3.up,-1f);
 				}
-		} 
+			
+		} */
 		
 		if(transform.position.x < leftBoundary)
 			transform.position = new Vector3(leftBoundary,transform.position.y,transform.position.z);

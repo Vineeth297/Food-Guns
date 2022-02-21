@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 1570194264720072043}
   m_Layer: 0
   m_Name: Drink
-  m_TagString: Untagged
+  m_TagString: Liquids
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,7 +194,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8291399536370152438}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -262,11 +262,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8291399536370152438}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7739196, y: 2.6010067, z: 1.7184217}
-  m_Center: {x: -0.025477052, y: 1.2926706, z: -0.014351964}
+  m_Size: {x: 1.7739196, y: 2.6010067, z: 1.1324596}
+  m_Center: {x: -0.025477052, y: 1.2926706, z: 0.0004453659}
 --- !u!54 &1570194264720072045
 Rigidbody:
   m_ObjectHideFlags: 0

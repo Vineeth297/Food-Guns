@@ -57,15 +57,16 @@ public class HandGunController : MonoBehaviour
 	[SerializeField] private ComboText comboComponent;
 	
 	private float _initFontSize;
-	
 	private void OnEnable()
 	{
 		GameEvents.Ge.aimModeSwitch += AdiosCollider;
+		GameEvents.Ge.startShooting += StartShooting;
 	}
 
 	private void OnDisable()
 	{
 		GameEvents.Ge.aimModeSwitch -= AdiosCollider;
+		GameEvents.Ge.startShooting -= StartShooting;
 	}
 
 	private void Start()
@@ -86,47 +87,47 @@ public class HandGunController : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKey(KeyCode.Space) && Time.time > _nextFire)
+		
+		if(canShoot)
 		{
-			_nextFire = Time.time + _fireSpeed;
+			if (Input.GetMouseButton(0) && Time.time > _nextFire)
+			{
+				_nextFire = Time.time + _fireSpeed;
 
-			if (isLeftHand)
-			{
-				OnStartShooting(leftHandController,leftMuzzle);
-				if(GameManager.Singleton.myLeftCollectibles >= 1)
-					GameManager.Singleton.myLeftCollectibles--;
-			}
-			else
-			{
-				OnStartShooting(rightHandController,rightMuzzle);
-				if(GameManager.Singleton.myRightCollectibles >= 1)
-					GameManager.Singleton.myRightCollectibles--;
+				if (isLeftHand)
+				{
+					OnStartShooting(leftHandController,leftMuzzle);
+					if(GameManager.Singleton.myLeftCollectibles >= 1)
+						GameManager.Singleton.myLeftCollectibles--;
+				}
+				else
+				{
+					OnStartShooting(rightHandController,rightMuzzle);
+					if(GameManager.Singleton.myRightCollectibles >= 1)
+						GameManager.Singleton.myRightCollectibles--;
+				}
 			}
 		}
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Solids"))
+		if (other.CompareTag("Solids") && leftHandController.myAmmo.Count == 0)
 		{
 			GameEvents.Ge.InvokeOnAmmoFound(leftHandController, other.gameObject, leftMagPos);
 			OnAmmoFound(leftHandController, other.gameObject, leftMagPos);
-			leftHandController.comboComponent.ComboSelling(comboText,_initFontSize);
-			totalLeftCollectibles++;
-			_totalAmmo++;
+			leftHandController.comboComponent.ComboSelling(comboText, _initFontSize);
+			other.GetComponent<Collectible>().isPickedUp = true;
 			GameManager.Singleton.myLeftCollectibles++;
-			myCollectibles++;
 		}
 	
-		if (other.CompareTag("Liquids"))
+		if (other.CompareTag("Liquids") && rightHandController.myAmmo.Count == 0)
 		{
 			GameEvents.Ge.InvokeOnAmmoFound(rightHandController, other.gameObject, rightMagPos);
 			OnAmmoFound(rightHandController, other.gameObject, rightMagPos);
-			rightHandController.comboComponent.ComboSelling(comboText,_initFontSize);
-			totalRightCollectibles++;
-			_totalAmmo++;
+			rightHandController.comboComponent.ComboSelling(comboText, _initFontSize);
+			other.GetComponent<Collectible>().isPickedUp = true;
 			GameManager.Singleton.myRightCollectibles++;
-			myCollectibles++;
 		}
 	}
 
@@ -231,5 +232,10 @@ public class HandGunController : MonoBehaviour
 	private void OnObstacleHeadEatingBurger()
 	{
 		myAmmo.RemoveAt(myAmmo.Count - 1);
+	}
+
+	private void StartShooting()
+	{
+		canShoot = true;
 	}
 }

@@ -35,17 +35,6 @@ public class ObstacleHead : MonoBehaviour
 		{
 			animator.SetTrigger(Eat);
 			eatingParticleSystem.Play();
-
-			if (other.CompareTag("Solids"))
-			{
-				if (GameManager.Singleton.myLeftCollectibles < 1)
-					GameManager.Singleton.lostPanel.SetActive(true);
-			}
-			else if(other.CompareTag("Liquids"))
-			{
-				if(GameManager.Singleton.myRightCollectibles < 1)
-					GameManager.Singleton.lostPanel.SetActive(true);
-			}
 		}
 
 		if (other.CompareTag("Player"))
@@ -65,7 +54,7 @@ public class ObstacleHead : MonoBehaviour
 			other.gameObject.SetActive(false);
 			
 			if (maxEat == 0)
-				GoUnder();
+				GoUnder(other.gameObject);
 		}
 	}
 
@@ -73,7 +62,7 @@ public class ObstacleHead : MonoBehaviour
 
 	private void CloseMouth() => animator.speed = 1;
 
-	private void GoUnder()
+	private void GoUnder(GameObject foodItem)
 	{
 		GetComponent<Collider>().enabled = false;
 		_playerControl.movementSpeed = 0f;
@@ -81,5 +70,16 @@ public class ObstacleHead : MonoBehaviour
 		{
 			_playerControl.movementSpeed = _playerInitialSpeed;
 		});
+		
+		if (foodItem.CompareTag("Solids"))
+		{
+			if (GameManager.Singleton.myLeftCollectibles < 1)
+				GameManager.Singleton.lostPanel.SetActive(true);
+		}
+		else if(foodItem.CompareTag("Liquids"))
+		{
+			if(GameManager.Singleton.myRightCollectibles < 1)
+				GameManager.Singleton.lostPanel.SetActive(true);
+		}
 	}
 }

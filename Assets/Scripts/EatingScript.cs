@@ -19,15 +19,15 @@ public class EatingScript : MonoBehaviour
 		if (GameManager.Singleton.myLeftCollectibles + GameManager.Singleton.myRightCollectibles != 0) return;
 
 		StartCoroutine(WinScreen());
-
 	}
 
 	private IEnumerator WinScreen()
 	{
+		print("Here");
 		_hungryHuman.GetComponent<HungryHuman>().Eat();
 
 		yield return new WaitForSeconds(1.5f);
 		
-		GameManager.Singleton.winPanel.SetActive(true);
+		GameManager.Singleton.WinPanel();
 	}
 }

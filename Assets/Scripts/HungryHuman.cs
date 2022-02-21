@@ -25,6 +25,7 @@ public class HungryHuman : MonoBehaviour
 		transform.DORotate(Vector3.zero, 2f).OnComplete(() =>
 		{
 			animator.SetTrigger(OpenMouth);
+			GameEvents.Ge.InvokeStartShooting();
 		});
 	}
 

@@ -14,6 +14,8 @@ public class GameEvents : MonoBehaviour
 	public Action stopCamera;
 
 	public Action obstacleHeadEatingBurger;
+
+	public Action startShooting;
 	private void Awake()
 	{
 		if(!Ge) Ge = this;
@@ -24,5 +26,6 @@ public class GameEvents : MonoBehaviour
 	public void InvokeOnAimModeSwitch() => aimModeSwitch?.Invoke();
 	public void InvokeOnStartFeeding() => startFeeding?.Invoke();
 	public void InvokeStopCamera() => stopCamera?.Invoke();
+	public void InvokeStartShooting() => startShooting?.Invoke();
 	public void InvokeObstacleHeadEatingBurger() => obstacleHeadEatingBurger?.Invoke();
 }

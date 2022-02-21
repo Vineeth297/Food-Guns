@@ -23,7 +23,7 @@ public class Collectible : MonoBehaviour
 
 	private Vector3 _initScale;
 
-	private bool _isPickedUp;
+	public bool isPickedUp;
 	private static bool _disableCameraFollow;
 	
 	[SerializeField,Range(0.001f,0.01f)] private float value = 0.001f;
@@ -61,9 +61,6 @@ public class Collectible : MonoBehaviour
 	
 	private void Update()
 	{
-		// if(doSnake)
-		// 	SnakeMovement();
-		
 		if(doSnake)
 			FollowTheGuy();
 		
@@ -85,22 +82,34 @@ public class Collectible : MonoBehaviour
 				playerPosition.x = 0f;
 
 				_playerControl.canWalkAround = false;
-				
 				_playerControl.gameObject.transform.DOMove(playerPosition, 0.5f).OnComplete(() =>
 				{
 					gameObject.SetActive(false);
 
 				}); // = playerPosition;
-				
 			}
 			else
 				gameObject.SetActive(false);
 		}
 
-		if (other.tag != tag) return;
-		if(!other.GetComponent<Collectible>()._isPickedUp)
+		if (!other.CompareTag(tag)) return;
+
+		if (other.TryGetComponent(out Collectible collected) && !collected.isPickedUp)
+		{
+			Count(other.gameObject);
+			collected.isPickedUp = true;
 			PickUpScaleAnim(other.gameObject);
+		}
+		
 		handGunController.OnAmmoFound(handGunController,other.gameObject,handGunController.isLeftHand ? handGunController.leftMagPos : handGunController.rightMagPos);
+	}
+
+	private void Count(GameObject other)
+	{
+		if (other.CompareTag("Solids"))
+			GameManager.Singleton.myLeftCollectibles++;
+		else
+			GameManager.Singleton.myRightCollectibles++;
 	}
 
 	private void OnAimModeSwitch()
@@ -160,7 +169,7 @@ public class Collectible : MonoBehaviour
 
 		 mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale + (pickUpInitScale * 0.2f), 0.5f).SetEase(Ease.OutElastic));
 		 mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale, 0.1f));
-		 pickedUpObject.GetComponent<Collectible>()._isPickedUp= true;
+		 pickedUpObject.GetComponent<Collectible>().isPickedUp = true;
 	 }
 
 	 private void FollowTheGuy()

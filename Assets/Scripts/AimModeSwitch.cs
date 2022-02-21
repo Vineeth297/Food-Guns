@@ -10,7 +10,6 @@ public class AimModeSwitch : MonoBehaviour
 		{
 			//stop player
 			GameEvents.Ge.InvokeOnAimModeSwitch();
-			canShoot = true;
 		}
 	}
 }
