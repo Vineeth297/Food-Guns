@@ -28,18 +28,24 @@ public class Collectible : MonoBehaviour
 	
 	[SerializeField,Range(0.001f,0.01f)] private float value = 0.001f;
 
-	[SerializeField] private GameObject mouth;
+	public GameObject mouth;
 	
 	[SerializeField] private float force = 5f;
+
+	
 
 	private void OnEnable()
 	{
 		GameEvents.Ge.aimModeSwitch += OnAimModeSwitch;
+		GameEvents.Ge.obstacleHeadAimSwitch += OnAimModeSwitch;
+		GameEvents.Ge.continueFollowing += OnContinueFollowing;
 	}
-	
+
 	private void OnDisable()
 	{
 		GameEvents.Ge.aimModeSwitch -= OnAimModeSwitch;
+		GameEvents.Ge.obstacleHeadAimSwitch -= OnAimModeSwitch;
+		GameEvents.Ge.continueFollowing += OnContinueFollowing;
 	}
 	void Start()
 	{
@@ -100,7 +106,7 @@ public class Collectible : MonoBehaviour
 			collected.isPickedUp = true;
 			PickUpScaleAnim(other.gameObject);
 		}
-		
+
 		handGunController.OnAmmoFound(handGunController,other.gameObject,handGunController.isLeftHand ? handGunController.leftMagPos : handGunController.rightMagPos);
 	}
 
@@ -117,11 +123,13 @@ public class Collectible : MonoBehaviour
 		if (_playerControl.walkState) return;
 		if (startMoving) return;
 		
+		if(!isPickedUp) return;
+		
 		_collider.enabled = false;
 		doSnake = false;
 		followOffset.z = 0;
-
 	}
+
 	private void Shoot()
 	{
 		transform.Translate(camera.transform.forward,Space.World);
@@ -130,8 +138,11 @@ public class Collectible : MonoBehaviour
 	public void StartMoving(Vector3 transformPosition)
 	{
 		transform.position = transformPosition;
-		var dir = mouth.transform.position - transformPosition;
+		var dir = mouth.transform.position - transform.position;
+		
+		Debug.DrawRay(transformPosition, dir,Color.red,3f);
 		_rb.isKinematic = false;
+		_collider.enabled = true;
 		_rb.AddForce(dir * (force),ForceMode.Impulse);
 		//startMoving = true;
 	}
@@ -168,17 +179,24 @@ public class Collectible : MonoBehaviour
 		 Sequence mySequence =  DOTween.Sequence();
 
 		 mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale + (pickUpInitScale * 0.2f), 0.5f).SetEase(Ease.OutElastic));
-		 mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale, 0.1f));
-		 pickedUpObject.GetComponent<Collectible>().isPickedUp = true;
+		mySequence.Append(pickedUpObject.transform.DOScale(pickUpInitScale, 0.1f));
+		pickedUpObject.GetComponent<Collectible>().isPickedUp = true;
 	 }
 
 	 private void FollowTheGuy()
 	 {
-		 if (ammoToFollow != null)
+		 if (ammoToFollow)
 		 {
 			 Vector3 smoothPos = Vector3.Lerp(transform.position, ammoToFollow.position + followOffset,
 				 Time.deltaTime * damping);
 			 transform.position = smoothPos;
 		 }
+	 }
+	 
+	 private void OnContinueFollowing()
+	 {
+		 followOffset.z = -1;
+		 doSnake = true;
+		 startMoving = false;
 	 }
 }

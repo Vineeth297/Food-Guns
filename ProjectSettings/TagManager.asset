@@ -7,6 +7,11 @@ TagManager:
   - Solids
   - Liquids
   - GunSpawner
+  - Divider
+  - AimModeSwitch
+  - FinalAimModeSwitch
+  - SolidHeadAimModeSwitch
+  - LiquidHeadAimModeSwitch
   layers:
   - Default
   - TransparentFX

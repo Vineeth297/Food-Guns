@@ -22,6 +22,8 @@ public class ObstacleHead : MonoBehaviour
 	private bool _iAmFull;
 	private PlayerControl _playerControl;
 	private float _playerInitialSpeed;
+
+	public HandGunController rightHandCon, leftHandCon;
 	private void Start()
 	{
 		text.text = maxEat.ToString();
@@ -64,11 +66,17 @@ public class ObstacleHead : MonoBehaviour
 
 	private void GoUnder(GameObject foodItem)
 	{
+		SoundManager.Singleton.PlaySound(SoundManager.Singleton.hmmSound);
 		GetComponent<Collider>().enabled = false;
-		_playerControl.movementSpeed = 0f;
-		transform.DOMove(transform.position + Vector3.down * 4f, 1.5f).OnComplete(() =>
+		transform.DOMove(transform.position + Vector3.down * 6.5f, 1f).OnComplete(() =>
 		{
+			print("HEre");
+			_playerControl.walkState = true;
 			_playerControl.movementSpeed = _playerInitialSpeed;
+			GameEvents.Ge.InvokeOnContinueFollowing();
+			GameEvents.Ge.InvokeStopShooting();
+
+			print("Speed -> " + _playerControl.movementSpeed);
 		});
 		
 		if (foodItem.CompareTag("Solids"))

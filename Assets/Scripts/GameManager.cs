@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 	public static GameManager Singleton;
 	[SerializeField] private GameObject crossHair;
 
+	private SoundManager _sound;
+	
 	public GameObject winPanel;
 	public GameObject lostPanel;
 	
@@ -18,11 +20,13 @@ public class GameManager : MonoBehaviour
 	private void OnEnable()
 	{
 		GameEvents.Ge.aimModeSwitch += OnAimCanvas;
+		GameEvents.Ge.obstacleHeadAimSwitch += OnAimCanvas;
 	}
 
 	private void OnDisable()
 	{
 		GameEvents.Ge.aimModeSwitch -= OnAimCanvas;
+		GameEvents.Ge.obstacleHeadAimSwitch -= OnAimCanvas;
 	}
 
 	private void Awake()
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
 	private void Start()
 	{
 		levelNumber.text = "Level " + (SceneManager.GetActiveScene().buildIndex + 1);
+		_sound = SoundManager.Singleton;
 	}
 
 	private void OnAimCanvas()
@@ -61,6 +66,7 @@ public class GameManager : MonoBehaviour
 	public void WinPanel()
 	{
 		levelNumber.enabled = false;
+		_sound.PlaySound(_sound.levelCompleteSound);
 		winPanel.SetActive(true);
 	}
 }

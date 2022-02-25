@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class GameEvents : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class GameEvents : MonoBehaviour
 	public Action obstacleHeadEatingBurger;
 
 	public Action startShooting;
+	public Action stopShooting;
+
+	public Action obstacleHeadAimSwitch;
+
+	public Action continueFollowing;
+
 	private void Awake()
 	{
 		if(!Ge) Ge = this;
@@ -27,5 +34,8 @@ public class GameEvents : MonoBehaviour
 	public void InvokeOnStartFeeding() => startFeeding?.Invoke();
 	public void InvokeStopCamera() => stopCamera?.Invoke();
 	public void InvokeStartShooting() => startShooting?.Invoke();
+	public void InvokeStopShooting() => stopShooting?.Invoke();
 	public void InvokeObstacleHeadEatingBurger() => obstacleHeadEatingBurger?.Invoke();
+	public void InvokeObstacleHeadAimSwitch() => obstacleHeadAimSwitch?.Invoke();
+	public void InvokeOnContinueFollowing() => continueFollowing?.Invoke();
 }

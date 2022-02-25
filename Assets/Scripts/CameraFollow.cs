@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -76,5 +74,4 @@ public class CameraFollow : MonoBehaviour
 	{
 		enabled = false;
 	}
-
 }

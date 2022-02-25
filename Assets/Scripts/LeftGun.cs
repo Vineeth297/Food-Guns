@@ -1,31 +1,38 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor.Rendering;
 
 public class LeftGun : MonoBehaviour
 {
 	private Tweener _tweener1,_tweener2;
 	private Vector3 _initScale;
-	
+	private Sequence _pickupSequence;
+
 	private void OnEnable()
 	{
 		_initScale = transform.localScale;
-		Sequence mySequence = DOTween.Sequence();
+		
+		var mySequence = DOTween.Sequence();
 		mySequence.Append(transform.DOScale(_initScale + (_initScale * 0.2f), 0.3f).SetEase(Ease.OutElastic));
-		mySequence.Append(transform.DOScale(_initScale ,0.1f));
+		mySequence.Append(transform.DOScale(_initScale ,0.15f));
+	}
+
+	private void Start()
+	{
+		_initScale = transform.localScale / 2;
 	}
 
 	public void PickUpReaction()
 	{
-		if (_tweener1.IsActive())
+		if (_pickupSequence.IsActive())
 		{
-			_tweener1.Kill();
-			_tweener2.Kill();
-			transform.localScale = _initScale;
+			_pickupSequence.Kill();
+			//Debug.Break();
 		}
+		
+		_pickupSequence = DOTween.Sequence();
 
-		transform.DOScale(_initScale + (_initScale * 0.2f), 0.5f).SetEase(Ease.OutElastic).OnUpdate(() =>
-		{
-			transform.DOScale(_initScale, 0.5f).SetEase(Ease.OutQuint);
-		});
-	}	
+		_pickupSequence.Append(transform.DOScale(_initScale * 1.25f, 0.15f).SetEase(Ease.OutElastic));
+		_pickupSequence.Append(transform.DOScale(_initScale ,0.15f));
+	}
 }

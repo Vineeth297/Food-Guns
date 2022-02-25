@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class HungryHuman : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class HungryHuman : MonoBehaviour
 		GameEvents.Ge.startFeeding -= StartFeeding;
 	}
 
+	private void Update()
+	{
+				
+	}
 	private void StartFeeding()
 	{
 		transform.DORotate(Vector3.zero, 2f).OnComplete(() =>
