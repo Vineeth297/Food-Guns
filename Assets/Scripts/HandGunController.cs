@@ -180,7 +180,7 @@ public class HandGunController : MonoBehaviour
 
 			_leftGunScript.PickUpReaction();
 			StartCoroutine(GulpTheAmmo(leftHandController));
-			KillAllGuplingTweens();
+		//	KillAllGuplingTweens();
 
 		}
 	
@@ -193,13 +193,14 @@ public class HandGunController : MonoBehaviour
 			rightHandController.comboComponent.ComboSelling(comboText, _initFontSize);
 			GameManager.Singleton.myRightCollectibles++;
 			
-			KillAllGuplingTweens();
 
 			StartCoroutine(GulpTheAmmo(rightHandController));
-
+			
 			_rightGunScript.PickUpReaction();
 			
 			_sound.PlaySound(_sound.pickupSound);
+			//KillAllGuplingTweens();
+
 		}
 	}
 
@@ -303,7 +304,7 @@ public class HandGunController : MonoBehaviour
 		anim.SetTrigger(ToShoot);
 	}
 
-	private void ReArrange(HandGunController hand, Vector3 firstPos)
+	public void ReArrange(HandGunController hand, Vector3 firstPos)
 	{
 		var ammoList = hand.myAmmo;
 		//caller of this function has removed ammoList 0 and passed on its posn as firstpos
@@ -319,8 +320,8 @@ public class HandGunController : MonoBehaviour
 	private void AdiosCollider()
 	{
 		gameObject.GetComponent<Collider>().enabled = false;
-		rightGun.transform.parent = rightHand.transform;
-		leftGun.transform.parent = leftHand.transform;
+		/*rightGun.transform.parent = rightHand.transform;
+		leftGun.transform.parent = leftHand.transform;*/
 		_burgerAmmoPos = loadingBurgerAmmo.transform.position;
 		_cokeAmmoPos = loadingCokeAmmo.transform.position;
 	}
@@ -376,7 +377,10 @@ public class HandGunController : MonoBehaviour
 	private void KillAllGuplingTweens()
 	{
 		foreach (var t in _gulpingTweens)
-			t.Kill(true);
+		{
+			if(t.IsActive())
+				t.Kill(true);
+		}
 		
 		_gulpingTweens.Clear();
 	}

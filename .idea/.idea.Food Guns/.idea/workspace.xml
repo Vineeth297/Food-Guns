@@ -20,101 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb6f0fd4-cfb6-45a5-ab60-8f1383d7755d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Dividor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Dividor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HeadAimTriggerVideoLevel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HeadAimTriggerVideoLevel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/GateIcons/Coke.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/GateIcons/Coke.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/CheeseBurger_VideoLevel.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/CheeseBurger_VideoLevel.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/Drink_VideoLevel.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/Drink_VideoLevel.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Head.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Head.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/SellingMachine.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/SellingMachine.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RightGunSucker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/VideoLevel_1 1.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/VideoLevel_1 1.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/VideoLevel_1.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/VideoLevel_1.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/VideoLevel_2.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/VideoLevel_2.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollowVideoLevel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollowVideoLevel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ComboText.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ComboText.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FallOffCollider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FallOffCollider.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SellingMachine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SellingMachine.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Whatever.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Whatever.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SoundManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SoundManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/23_Hmmmm.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/23_Hmmmm.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Chewing.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Chewing.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/FinalMunching.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/FinalMunching.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gulping.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gulping.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/GunAssembled.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/GunAssembled.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/GunEquipSounf.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/GunEquipSounf.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/ItemAppear.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/ItemAppear.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/LevelComplete.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/LevelComplete.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/MoneyPickup 1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/MoneyPickup 1.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/MoneyPickup.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/MoneyPickup.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Munching.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Munching.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Pickup.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Pickup.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Shoot.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Shoot.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Shoot2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Shoot2.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sucker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sucker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/aWhatever.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/aWhatever.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/BogusCode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PosMachine (2).prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PosMachine (2).prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Food Guns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Hands/AnimatorControllers/LeftHand.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Hands/AnimatorControllers/LeftHand.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Hands/LeftGunHoldingAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Hands/LeftGunHoldingAnimation.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BOXOPHOBIC/Polyverse Skies/Core/Presets/Sky 09.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BOXOPHOBIC/Polyverse Skies/Core/Presets/Sky 09.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ComboText.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ComboText.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FallOffCollider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FallOffCollider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AimModeSwitch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AimModeSwitch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Lose Panel.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Lose Panel.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Win_Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Win_Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VideoLevel_1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VideoLevel_1 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EatingScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EatingScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HungryHuman.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HungryHuman.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeftGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LeftGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObstacleHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObstacleHead.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObstacleHead.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObstacleHead.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RightGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RightGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SellingMachine.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SellingMachine.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SellingMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SellingMachine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +46,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="SOFT" />
   </component>
@@ -135,6 +59,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AnimationEvent.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AnimationEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/BogusCode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RightGunSucker.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DrinkMaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunSpawnerGate.cs" root0="FORCE_HIGHLIGHTING" />
@@ -223,14 +149,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LeftGun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AimModeSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/Sucker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HungryHuman.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SellingMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObstacleHead.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EatingScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SellingMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HandGunController.cs" />
+        <option value="$PROJECT_DIR$/Assets/BogusCode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControl.cs" />
       </list>
     </option>
   </component>
@@ -297,7 +224,8 @@
     <MESSAGE value="Updating Git Repo" />
     <MESSAGE value="LEvels Left" />
     <MESSAGE value="Done with most of the updates...&#10;Left with&#10;    Different Final heads&#10;    Camera Centre Adjustments&#10;    Touch Control Adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done with most of the updates...&#10;Left with&#10;    Different Final heads&#10;    Camera Centre Adjustments&#10;    Touch Control Adjustments" />
+    <MESSAGE value="Branch ads push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Branch ads push" />
   </component>
   <component name="WindowStateProjectService">
     <state x="729" y="243" key="RiderGenerateDialog" timestamp="1645604021492">
@@ -316,10 +244,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1644569697288" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1645446112975">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1645785927202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645446112974" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645785927202" />
     <state x="824" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1645020340672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -332,9 +260,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="733" y="394" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1643810447295" />
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1645706855870">
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1645794453970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645706855870" />
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645794453970" />
   </component>
 </project>

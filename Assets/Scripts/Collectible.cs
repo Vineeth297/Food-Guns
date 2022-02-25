@@ -75,7 +75,8 @@ public class Collectible : MonoBehaviour
 	}
 
 	public Vector3 followOffset;
-	
+	public static bool FinalAimState;
+
 	private void OnTriggerEnter(Collider other)
 	{	
 		if (other.CompareTag("GunSpawner"))
@@ -187,6 +188,14 @@ public class Collectible : MonoBehaviour
 	 {
 		 if (ammoToFollow)
 		 {
+			 if (FinalAimState)
+			 {
+				 Vector3 bParam = ammoToFollow.position + followOffset;
+				 Vector3 smoothFinalPos = Vector3.Lerp(transform.position, new Vector3(bParam.x, transform.position.y, transform.position.z), 
+					 Time.deltaTime * damping);
+				 transform.position = smoothFinalPos;
+				 return;
+			 }
 			 Vector3 smoothPos = Vector3.Lerp(transform.position, ammoToFollow.position + followOffset,
 				 Time.deltaTime * damping);
 			 transform.position = smoothPos;
@@ -198,5 +207,6 @@ public class Collectible : MonoBehaviour
 		 followOffset.z = -1;
 		 doSnake = true;
 		 startMoving = false;
+		 _collider.enabled = true;
 	 }
 }

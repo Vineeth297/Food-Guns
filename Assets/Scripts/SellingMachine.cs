@@ -23,12 +23,16 @@ public class SellingMachine : MonoBehaviour
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!other.CompareTag("Solids") && !other.CompareTag("Liquids")) return;
-		
+		print("Here");
+
 		other.GetComponent<Collider>().enabled = false;
 		var collectible = other.GetComponent<Collectible>();
 		if (other.CompareTag("Solids"))
 			collectible.leftAmmoIndex = 0;
-			
+		
+		if (other.CompareTag("Liquids"))
+			collectible.rightAmmoIndex = 0;
+		
 		SoundManager.Singleton.PlaySound(SoundManager.Singleton.moneySound);
 		collectible.enabled = false;
 		collectible.handGunController.myAmmo.Remove(other.gameObject);

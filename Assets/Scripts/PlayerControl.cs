@@ -1,10 +1,13 @@
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
+	public static PlayerControl single;
+
+	private void Awake() => single = this;
+
 	public float movementSpeed = 5f;
 	[SerializeField] private float xForce;
 	public float xSpeed;
@@ -23,6 +26,8 @@ public class PlayerControl : MonoBehaviour
 
 	private float _temp;
 	public int shootCount;
+
+	public Transform leftTransform, rightTransform;
 	private void OnEnable()
 	{
 		GameEvents.Ge.aimModeSwitch += OnAimModeSwitch;
@@ -43,6 +48,7 @@ public class PlayerControl : MonoBehaviour
 	
 	void Update()
 	{
+		print(walkState);
 		
 		if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
@@ -62,7 +68,12 @@ public class PlayerControl : MonoBehaviour
 		
 		if (walkState)
 		{
-			transform.Translate((Vector3.forward * movementSpeed + new Vector3(xForce * xSpeed, 0f, 0f)) * Time.deltaTime, Space.World);
+			transform.Translate((Vector3.forward * movementSpeed +
+								 new Vector3(xForce * xSpeed,
+									 0f,
+									 0f)) *
+								Time.deltaTime,
+				Space.World);
 		}
 		/*else
 		{ 
@@ -93,7 +104,6 @@ public class PlayerControl : MonoBehaviour
 			_handGunController.rightHandController.transform.parent.DOMoveX(
 				other.transform.GetChild(1).transform.position.x,1f);
 		}
-
 		if (other.CompareTag("AimModeSwitch"))
 		{
 			GameEvents.Ge.InvokeObstacleHeadAimSwitch();
@@ -123,9 +133,11 @@ public class PlayerControl : MonoBehaviour
 			GameEvents.Ge.InvokeObstacleHeadAimSwitch();
 			other.gameObject.SetActive(false);
 		}
-
 		if (other.CompareTag("FinalAimModeSwitch"))
 		{
+			//Collectible.FinalAimState = true;
+			/*_handGunController.leftHandController.transform.parent.DOMove(leftTransform.position,0.5f);
+			_handGunController.rightHandController.transform.parent.DOMove(rightTransform.position,0.5f);*/
 			var cameraTransform = _camera.transform;
 			cameraTransform.DORotate(new Vector3(13.404f,0f,0f), 1f, RotateMode.Fast).OnComplete(() =>	
 			{
@@ -133,6 +145,12 @@ public class PlayerControl : MonoBehaviour
 			});
 
 			cameraTransform.DOMove(cameraFinalPosition.transform.position, 1f);
+			/*_handGunController.leftHandController.myAmmo[0].GetComponent<Collectible>().ammoToFollow =
+				_handGunController.leftHandController.leftMagPos.transform;
+			
+			_handGunController.rightHandController.myAmmo[0].GetComponent<Collectible>().ammoToFollow =
+				_handGunController.rightHandController.rightMagPos.transform;*/
+			//transform.DOMoveX(0, 1f);
 			cameraTransform.parent = transform;
 			/*transform.DOMove(other.transform.position,0.2f).OnComplete(() =>
 			{
@@ -150,7 +168,6 @@ public class PlayerControl : MonoBehaviour
 
 			AssignMouth(other.gameObject);
 			GameEvents.Ge.InvokeOnAimModeSwitch();
-
 		}
 	}
 
